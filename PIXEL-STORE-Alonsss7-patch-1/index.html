@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITULO DEL PROYECTO -->
+    <title>Pixel Store</title>
+
+    <!-- VINCULO AL ARCHIVO DE ESTILOS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<!-- MENU PRINCIPAL -->
+<header class="encabezado">
+
+    <!-- NOMBRE DE LA TIENDA -->
+    <h1 class="logo">Pixel Store</h1>
+
+    <!-- OPCIONES DEL MENU -->
+    <nav class="menu">
+        <a href="index.html">Tienda</a>
+        <a href="categorias.html">Categorías</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="iniciar_sesion.html">Iniciar sesión</a>
+    </nav>
+
+</header>
+
+<!-- PORTADA PRINCIPAL -->
+<section class="portada">
+
+    <!-- TEXTO DE LA PORTADA -->
+    <div class="contenido-portada">
+
+        <p class="destacado">Juegos para todos</p>
+
+        <h2>Encuentra tu próximo juego favorito</h2>
+
+        <p>
+            Busca, compara y descubre juegos que se adapten
+            a tus gustos y presupuesto.
+        </p>
+
+        <a href="#juegos" class="boton">Explorar juegos</a>
+
+    </div>
+
+</section>
+
+<!-- SECCION DE JUEGOS -->
+<section class="seccion-juegos" id="juegos">
+
+    <h2>Juegos destacados</h2>
+
+    <!-- BUSCADOR Y FILTROS -->
+    <div class="buscador-filtros">
+
+        <!-- BUSCADOR -->
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscar videojuego"
+        >
+
+        <!-- FILTRO DE CATEGORIAS -->
+        <select id="filtro-categorias">
+            <option value="">Todas las categorías</option>
+            <option value="carreras">Carreras</option>
+            <option value="aventura">Aventura</option>
+            <option value="disparos">Disparos</option>
+            <option value="deportes">Deportes</option>
+            <option value="accion">Acción</option>
+            <option value="terror">Terror</option>
+        </select>
+
+        <!-- FILTRO DE PRECIO -->
+        <select id="filtro-precio">
+            <option value="">Todos los precios</option>
+            <option value="0-50">S/ 0 - S/ 50</option>
+            <option value="51-100">S/ 51 - S/ 100</option>
+            <option value="101-200">S/ 101 - S/ 200</option>
+            <option value="201-300">S/ 201 - S/ 300</option>
+        </select>
+
+        <button type="button" class="boton-buscar">
+            Buscar
+        </button>
+
+    </div>
+
+    <!-- LISTA DE JUEGOS -->
+    <div class="lista-juegos">
+
+        <!-- PRIMER JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="neo-racing.jpeg.jpeg" alt="Portada de Neo Racing">
+            </div>
+
+            <h3>NEO RACING</h3>
+            <p>CARRERAS</p>
+
+            <div class="compra">
+                <span>S/ 19.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- SEGUNDO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="MARVEL.jpeg.JPG" alt="Portada de Marvel's Spider-Man">
+            </div>
+
+            <h3>MARVEL'S SPIDER-MAN</h3>
+            <p>AVENTURA Y ACCIÓN</p>
+
+            <div class="compra">
+                <span>S/ 79.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- TERCER JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="FIFA26.jpg" alt="Portada de FIFA 26">
+            </div>
+
+            <h3>FIFA 26</h3>
+            <p>DEPORTES</p>
+
+            <div class="compra">
+                <span>S/ 149.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- CUARTO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="LEFT.jpeg" alt="Portada de Left 4 Dead 2">
+            </div>
+
+            <span class="etiqueta-oferta">OFERTA</span>
+
+            <h3>LEFT 4 DEAD 2</h3>
+            <p>DISPAROS Y AVENTURA</p>
+
+            <div class="compra">
+                <span>S/ 8.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- QUINTO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="the last of us.jpeg" alt="Portada de The Last of Us">
+            </div>
+
+            <h3>THE LAST OF US™ PARTE I</h3>
+            <p>AVENTURA Y ACCIÓN</p>
+
+            <div class="compra">
+                <span>S/ 99.50</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- SEXTO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="DarkSoulsIII.jpeg" alt="Portada de Dark Souls III">
+            </div>
+
+            <h3>DARK SOULS III</h3>
+            <p>AVENTURA Y ACCIÓN</p>
+
+            <div class="compra">
+                <span>S/ 172.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- SEPTIMO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="red dead.jpeg" alt="Portada de Red Dead Redemption 2">
+            </div>
+
+            <h3>RED DEAD REDEMPTION 2</h3>
+            <p>AVENTURA Y ACCIÓN</p>
+
+            <div class="compra">
+                <span>S/ 219.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- OCTAVO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="black myth wukong.jpeg" alt="Portada de Black Myth Wukong">
+            </div>
+
+            <h3>BLACK MYTH: WUKONG</h3>
+            <p>AVENTURA Y ACCIÓN</p>
+
+            <div class="compra">
+                <span>S/ 199.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- NOVENO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="resident evil.jpeg" alt="Portada de Resident Evil 4 Remake">
+            </div>
+
+            <h3>RESIDENT EVIL 4 REMAKE</h3>
+            <p>SUPERVIVENCIA Y TERROR</p>
+
+            <div class="compra">
+                <span>S/ 120.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+        <!-- DECIMO JUEGO -->
+        <div class="tarjeta-juego">
+
+            <div class="imagen-juego">
+                <img src="Silent hill f.jpeg" alt="Portada de Silent Hill">
+            </div>
+
+            <h3>SILENT HILL: THE SHORT MESSAGE</h3>
+            <p>SUPERVIVENCIA Y TERROR</p>
+
+            <div class="compra">
+                <span>S/ 232.90</span>
+                <button type="button">Comprar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
