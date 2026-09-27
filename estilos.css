@@ -12,7 +12,7 @@ html {
 
 /* ESTILO GENERAL DE LA PÁGINA */
 body {
-    background-color: #1b2838;
+    background-color: #000307;
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -55,17 +55,13 @@ body {
 
 /* PORTADA PRINCIPAL */
 .portada {
-    min-height: 450px;
+    position: relative;
+    min-height: 500px; 
     padding: 80px 60px;
 
     display: flex;
     align-items: center;
-
-    background: linear-gradient(
-        to right,
-        #162c46,
-        #1b2838
-    );
+    overflow: hidden;
 }
 
 /* CONTENIDO DE LA PORTADA */
@@ -282,4 +278,50 @@ body {
 /*EFECTO DEL BOTÓN BUSCAR*/
 .boton-buscar:hover {
     background-color: #66c0f4;
+}
+
+/* CONTENEDOR DE LA IMAGEN DE FONDO */
+.imagen-portada {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* IMAGEN DE FONDO QUE CUBRE TODO */
+.imagen-portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+}
+
+/* CAPA OSCURA PARA QUE EL TEXTO SEA LEGIBLE */
+.capa-oscura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 5, 10, 0.55); 
+    z-index: 2;
+}
+
+/* CONTENIDO DE LA PORTADA (POR ENCIMA DE LA IMAGEN) */
+.contenido-portada {
+    position: relative;
+    z-index: 3;
+    max-width: 550px;
+}
+
+/* BARRA DE BUSQUEDA Y FILTROS */
+
+.buscador-filtros {
+    background-color: darkcyan;
+    
+
+
 }
