@@ -25,7 +25,7 @@
         <a href="index.html">Tienda</a>
         <a href="categorias.html">Categorías</a>
         <a href="ofertas.html">Ofertas</a>
-        <a href="iniciar_sesion.html">Iniciar sesión</a>
+       <a href="#" id="abrir-sesion">Iniciar sesión</a>
     </nav>
 
 </header>
@@ -281,12 +281,72 @@
     </div>
 </div> 
 
-        </div>
-
+<!-- TARJETA The Binding of Isaac -->
+<div class="tarjeta-juego">
+    <div class="imagen-juego">
+        <img src="issac.jpeg.jpg" alt="Portada de The Binding of Isaac">
     </div>
+    <h3>The Binding of Isaac</h3>
+    <p>Rogue like,Twin-stick Shooter,Dungeon Crawler</p>
+    <div class="compra">
+        <span>S/ 50.90</span>
+        <button type="button">Comprar</button>
+    </div>
+</div> 
 
-</section>
-
+<!-- VENTANA DE INICIO DE SESION Y REGISTRO -->
+<div class="ventana-sesion" id="ventana-sesion">
+    <div class="caja-sesion">
+ 
+        <button type="button" class="cerrar-sesion" id="cerrar-sesion">✕</button>
+ 
+        <!-- FORMULARIO: INGRESAR -->
+        <form class="formulario-sesion" id="form-login">
+            <h2>Iniciar sesión</h2>
+ 
+            <label for="login-correo">Correo electrónico</label>
+            <input type="email" id="login-correo" placeholder="tucorreo@ejemplo.com" required>
+ 
+            <label for="login-clave">Contraseña</label>
+            <input type="password" id="login-clave" placeholder="Tu contraseña" required>
+ 
+            <button type="submit" class="boton">Ingresar</button>
+ 
+            <p class="texto-registro">
+                ¿No tienes cuenta? <a href="#" id="ir-registro">Regístrate</a>
+            </p>
+        </form>
+ 
+        <!-- FORMULARIO: REGISTRARSE -->
+        <form class="formulario-sesion" id="form-registro" style="display:none">
+            <h2>Crear cuenta</h2>
+ 
+            <label for="reg-nombre">Nombre</label>
+            <input type="text" id="reg-nombre" placeholder="Tu nombre" required>
+ 
+            <label for="reg-correo">Correo electrónico</label>
+            <input type="email" id="reg-correo" placeholder="tucorreo@ejemplo.com" required>
+ 
+            <label for="reg-clave">Contraseña (mínimo 6 caracteres)</label>
+            <input type="password" id="reg-clave" minlength="6" required>
+ 
+            <button type="submit" class="boton">Registrarme</button>
+ 
+            <p class="texto-registro">
+                ¿Ya tienes cuenta? <a href="#" id="ir-login">Inicia sesión</a>
+            </p>
+        </form>
+ 
+        <!-- MENSAJES DE ERROR O EXITO -->
+        <p id="mensaje-sesion" class="mensaje-sesion"></p>
+ 
+    </div>
+</div>
+ 
+ 
+<!-- LOGICA DEL INICIO DE SESION -->
+<script src="sesion.js"></script>
+ 
 </body>
-
+ 
 </html>
