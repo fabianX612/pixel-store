@@ -8,8 +8,11 @@
     <!-- TITULO DEL PROYECTO -->
     <title>Pixel Store</title>
 
+    <!-- FUENTE ARCADE (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <!-- VINCULO AL ARCHIVO DE ESTILOS -->
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos-simple.css">
 </head>
 
 <body>
@@ -25,6 +28,7 @@
         <a href="index.html">Tienda</a>
         <a href="categorias.html">Categorías</a>
         <a href="ofertas.html">Ofertas</a>
+        <a href="#streaming">Streaming</a>
        <a href="#" id="abrir-sesion">Iniciar sesión</a>
     </nav>
 
@@ -308,6 +312,69 @@
         <button type="button">Comprar</button>
     </div>
 </div>
+
+    </div>
+    <!-- FIN LISTA DE JUEGOS -->
+
+</section>
+<!-- FIN SECCION DE JUEGOS -->
+
+
+<!-- SECCION DE CUENTAS DE STREAMING -->
+<!--
+    CALCULO INTERNO (no lo ven los clientes):
+    Netflix Premium: S/ 60 / 4 perfiles = S/ 15 por perfil -> vendemos a S/ 20 (ganancia S/ 5 por perfil)
+    Los demas precios son de ejemplo: cambiarlos por los reales.
+-->
+<section class="seccion-streaming" id="streaming">
+
+    <h2>Cuentas de streaming</h2>
+
+    <div class="lista-streaming">
+
+        <!-- NETFLIX -->
+        <div class="tarjeta-streaming">
+            <img src="netflix.png" alt="Logo de Netflix">
+            <p>1 perfil</p>
+            <div class="compra">
+                <span>S/ 20</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- DISNEY+ -->
+        <div class="tarjeta-streaming">
+            <img src="disney.jpg" alt="Logo de Disney+">
+            <p>1 perfil</p>
+            <div class="compra">
+                <span>S/ 16</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- MAX -->
+        <div class="tarjeta-streaming">
+            <img src="max.jpg" alt="Logo de Max">
+            <p>1 perfil</p>
+            <div class="compra">
+                <span>S/ 14</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- CRUNCHYROLL -->
+        <div class="tarjeta-streaming">
+            <img src="crunchyroll.jpg" alt="Logo de Crunchyroll">
+            <p>1 perfil</p>
+            <div class="compra">
+                <span>S/ 8</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- VENTANA DE INICIO DE SESION Y REGISTRO -->
 <div class="ventana-sesion" id="ventana-sesion">
