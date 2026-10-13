@@ -1,0 +1,495 @@
+/* QUITAMOS LOS ESPACIOS PREDETERMINADOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* DESPLAZAMIENTO SUAVE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ESTILO GENERAL DE LA PÁGINA */
+body {
+    background-color: #0d0221;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* MENÚ SUPERIOR */
+.encabezado {
+    background-color: #1a0638;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 15px 60px;
+    border-bottom: 4px solid #ffe600;
+}
+
+/* NOMBRE DE LA TIENDA */
+.logo {
+    color: #ffe600;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 22px;
+}
+
+/* OPCIONES DEL MENÚ */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* ENLACES DEL MENÚ */
+.menu a {
+    color: #ffffff;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+/* EFECTO DEL MENÚ */
+.menu a:hover {
+    color: #ffffff;
+}
+
+/* PORTADA PRINCIPAL */
+.portada {
+    position: relative;
+    min-height: 500px;
+    padding: 80px 60px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* TEXTO JUEGOS PARA TODOS */
+.destacado {
+    color: #ffe600;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* TÍTULO DE LA PORTADA */
+.contenido-portada h2 {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* DESCRIPCIÓN DE LA PORTADA */
+.contenido-portada p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* BOTÓN EXPLORAR JUEGOS */
+.boton {
+    display: inline-block;
+
+    background-color: #ffe600;
+    color: #0d0221;
+
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 12px;
+
+    padding: 14px 22px;
+    border: none;
+
+    text-decoration: none;
+}
+
+/* EFECTO DEL BOTÓN */
+.boton:hover {
+    background-color: #ffffff;
+}
+
+/* SECCIÓN DE JUEGOS */
+.seccion-juegos {
+    padding: 60px;
+    background-color: #150533;
+}
+
+/* TÍTULOS DE LAS SECCIONES */
+.seccion-juegos > h2,
+.seccion-streaming > h2 {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #ffe600;
+    margin-bottom: 30px;
+}
+
+/* LISTA DE JUEGOS */
+.lista-juegos {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    gap: 29px;
+
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* TARJETA DEL JUEGO */
+.tarjeta-juego {
+    background-color: #24094f;
+    border: 3px solid #ffe600;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s;
+}
+
+/* MOVIMIENTO DE LA TARJETA */
+.tarjeta-juego:hover {
+    transform: translateY(-7px);
+}
+
+/* CONTENEDOR DE LA IMAGEN */
+.imagen-juego {
+    width: 100%;
+    height: 280px;
+}
+
+/* IMAGEN DEL JUEGO */
+.imagen-juego img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+}
+
+/* NOMBRE DEL JUEGO */
+.tarjeta-juego h3 {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 18px 18px 8px;
+}
+
+/* CATEGORÍA DEL JUEGO */
+.tarjeta-juego p {
+    color: #cccccc;
+    font-size: 14px;
+    margin: 0 18px 20px;
+}
+
+/* PRECIO Y BOTÓN */
+.compra {
+    margin: auto 18px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* PRECIO */
+.compra span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffe600;
+}
+
+/* BOTÓN COMPRAR */
+.compra button {
+    background-color: #ffe600;
+    color: #0d0221;
+
+    padding: 10px 16px;
+
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* EFECTO DEL BOTÓN COMPRAR */
+.compra button:hover {
+    background-color: #ffffff;
+}
+
+/* ETIQUETA DE OFERTA */
+.etiqueta-oferta {
+    width: max-content;
+
+    background-color: #ffe600;
+    color: #0d0221;
+
+    padding: 4px 9px;
+    margin: 15px 18px 0;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* BUSCADOR Y FILTROS */
+.buscador-filtros {
+    margin-bottom: 35px;
+
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    background-color: #24094f;
+    border: 3px solid #ffe600;
+}
+
+/* CAMPO DE BÚSQUEDA */
+.buscador-filtros input[type="text"] {
+    width: 350px;
+    max-width: 100%;
+    padding: 12px;
+
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* FILTROS */
+.buscador-filtros select {
+    width: 220px;
+    max-width: 100%;
+    padding: 12px;
+
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* BOTÓN BUSCAR */
+.boton-buscar {
+    padding: 12px 25px;
+    background-color: #ffe600;
+    color: #0d0221;
+
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* EFECTO DEL BOTÓN BUSCAR */
+.boton-buscar:hover {
+    background-color: #ffffff;
+}
+
+/* CONTENEDOR DE LA IMAGEN DE FONDO */
+.imagen-portada {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* IMAGEN DE FONDO QUE CUBRE TODO */
+.imagen-portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* CAPA OSCURA PARA QUE EL TEXTO SEA LEGIBLE */
+.capa-oscura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 2, 33, 0.7);
+    z-index: 2;
+}
+
+/* CONTENIDO DE LA PORTADA (POR ENCIMA DE LA IMAGEN) */
+.contenido-portada {
+    position: relative;
+    z-index: 3;
+    max-width: 650px;
+}
+
+/* ===== CUENTAS DE STREAMING ===== */
+.seccion-streaming {
+    padding: 60px;
+    background-color: #0d0221;
+}
+
+/* LISTA DE CUENTAS */
+.lista-streaming {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 29px;
+
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* TARJETA DE STREAMING: logo, "1 perfil", precio y comprar */
+.tarjeta-streaming {
+    background-color: #24094f;
+    border: 3px solid #ffe600;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGO */
+.tarjeta-streaming img {
+    width: 100%;
+    display: block;
+}
+
+/* TEXTO "1 PERFIL" */
+.tarjeta-streaming p {
+    color: #cccccc;
+    font-size: 18px;
+    margin: 18px 18px 15px;
+}
+
+/* ===== INICIO DE SESION Y REGISTRO ===== */
+.ventana-sesion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.ventana-sesion.activa {
+    display: flex;
+}
+
+.caja-sesion {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 20px;
+    padding: 35px 30px;
+    border: 3px solid #ffe600;
+    background-color: #1a0638;
+    color: #ffffff;
+    text-align: center;
+}
+
+button.cerrar-sesion {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.formulario-sesion {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.formulario-sesion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-sesion label {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.formulario-sesion input {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #24094f;
+    background-color: #0d0221;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.formulario-sesion input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+.formulario-sesion .boton {
+    cursor: pointer;
+    text-align: center;
+}
+
+.texto-registro {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.texto-registro a {
+    color: #ffe600;
+    text-decoration: none;
+}
+
+.texto-registro a:hover {
+    text-decoration: underline;
+}
+
+.mensaje-sesion {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ===== DISEÑO RESPONSIVO ===== */
+@media (max-width: 1100px) {
+    .lista-juegos,
+    .lista-streaming {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .encabezado {
+        padding: 15px 20px;
+        justify-content: center;
+    }
+
+    .portada {
+        padding: 50px 20px;
+    }
+
+    .contenido-portada h2 {
+        font-size: 20px;
+    }
+
+    .seccion-juegos,
+    .seccion-streaming {
+        padding: 40px 20px;
+    }
+
+    .lista-juegos,
+    .lista-streaming {
+        grid-template-columns: 1fr;
+    }
+}
