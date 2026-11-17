@@ -24,13 +24,23 @@
     <h1 class="logo">Pixel Store</h1>
 
     <!-- OPCIONES DEL MENU -->
-    <nav class="menu">
-        <a href="index.html">Tienda</a>
-        <a href="categorias.html">Categorías</a>
-        <a href="ofertas.html">Ofertas</a>
-       <a href="#" id="abrir-sesion">Iniciar sesión</a>
-        <span class="contador-fav">Favoritos: <span id="total-fav">0</span></span>
-    </nav>
+<nav class="menu">
+    <a href="index.html">Tienda</a>
+    <a href="categorias.html">Categorías</a>
+    <a href="ofertas.html">Ofertas</a>
+    
+    <!-- BOTÓN PARA INICIAR SESIÓN (se oculta al loguearse) -->
+    <a href="#" id="abrir-sesion">Iniciar sesión</a>
+    
+    <!-- NUEVO: MENÚ DE USUARIO (oculto por defecto) -->
+    <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
+        <!-- Este enlace lleva al perfil -->
+        <a href="perfil.html" id="enlace-perfil" style="color: #FFD700; text-decoration: none; font-weight: bold;">
+            Hola, <span id="nombre-usuario">Usuario</span>
+        </a>
+        <a href="#" id="cerrar-sesion-usuario" style="color: white; text-decoration: none;">(Salir)</a>
+    </div>
+</nav>
 
 </header>
 
@@ -112,7 +122,6 @@
             </div>
 
             <h3><a href="juego.html?id=neo-racing">NEO RACING</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>CARRERAS</p>
 
             <div class="compra">
@@ -131,7 +140,6 @@
             </div>
 
             <h3><a href="juego.html?id=spider-man">MARVEL'S SPIDER-MAN</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
 
             <div class="compra">
@@ -150,7 +158,6 @@
             </div>
 
             <h3><a href="juego.html?id=fifa-26">FIFA 26</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>DEPORTES</p>
 
             <div class="compra">
@@ -171,7 +178,6 @@
             <span class="etiqueta-oferta">OFERTA</span>
 
             <h3><a href="juego.html?id=left-4-dead-2">LEFT 4 DEAD 2</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>DISPAROS Y AVENTURA</p>
 
             <div class="compra">
@@ -190,7 +196,6 @@
             </div>
 
             <h3><a href="juego.html?id=the-last-of-us">THE LAST OF US™ PARTE I</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
 
             <div class="compra">
@@ -209,7 +214,6 @@
             </div>
 
             <h3><a href="juego.html?id=dark-souls-3">DARK SOULS III</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
 
             <div class="compra">
@@ -228,7 +232,6 @@
             </div>
 
             <h3><a href="juego.html?id=red-dead-redemption-2">RED DEAD REDEMPTION 2</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
 
             <div class="compra">
@@ -247,7 +250,6 @@
             </div>
 
             <h3><a href="juego.html?id=black-myth-wukong">BLACK MYTH: WUKONG</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
 
             <div class="compra">
@@ -266,7 +268,6 @@
             </div>
 
             <h3><a href="juego.html?id=resident-evil-4">RESIDENT EVIL 4 REMAKE</a></h3>
-            <button type="button" class="btn-fav">♡</button>
             <p>SUPERVIVENCIA Y TERROR</p>
 
             <div class="compra">
@@ -283,7 +284,6 @@
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
     </div>
     <h3><a href="juego.html?id=silent-hill-f">SILENT HILL f</a></h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>SUPERVIVENCIA Y TERROR</p>
     <div class="compra">
         <span>S/ 232.90</span>
@@ -299,7 +299,6 @@
         <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
     </div>
     <h3><a href="juego.html?id=nier-automata">NIER: AUTOMATA</a></h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>AVENTURA Y ACCIÓN</p>
     <div class="compra">
         <span>S/ 149.90</span>
@@ -314,7 +313,6 @@
         <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
     </div>
     <h3><a href="juego.html?id=binding-of-isaac">The Binding of Isaac</a></h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>Rogue like,Twin-stick Shooter,Dungeon Crawler</p>
     <div class="compra">
         <span>S/ 50.90</span>
@@ -330,7 +328,6 @@
     </div>
 
     <h3><a href="juego.html?id=elden-ring">ELDEN RING</a></h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>AVENTURA Y ACCIÓN</p>
 
     <div class="compra">
@@ -345,7 +342,6 @@
         <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
     </div>
     <h3>FIFA 27</h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>DEPORTES</p>
     <div class="compra">
         <span>S/ 150.90</span>
@@ -359,7 +355,6 @@
         <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
     </div>
     <h3>GTA 6</h3>
-    <button type="button" class="btn-fav">♡</button>
     <p>AVENTURA Y ACCIÓN</p>
     <div class="compra">
         <span>S/ 299.90</span>
@@ -432,7 +427,6 @@
 <script src="tienda.js"></script>
 <!-- VENTANA DE PAGO CON YAPE -->
 <script src="pagos.js"></script>
-<script src="favoritos.js"></script>
 
 </body>
         <!-- REDES SOCIALES -->

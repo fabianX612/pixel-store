@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Pixel Store</title>
+
+    <!-- FUENTE ARCADE -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- TUS ESTILOS GENERALES (que ahora incluyen los del perfil) -->
+    <link rel="stylesheet" href="estilos-simple.css">
+</head>
+<body>
+
+    <header class="encabezado-perfil">
+        <h1 class="logo">Pixel Store</h1>
+    </header>
+
+    <div class="contenedor-perfil">
+
+        <!-- SALUDO DINÁMICO -->
+        <h1 id="saludo-perfil">Bienvenido</h1>
+
+        <!-- DATOS DEL USUARIO -->
+        <div class="tarjeta-info">
+            <h3>Mis Datos</h3>
+            <p><strong>Nombre:</strong> <span id="perfil-nombre">—</span></p>
+            <p><strong>Correo:</strong> <span id="perfil-correo">—</span></p>
+            <p><strong>Miembro desde:</strong> 2024</p>
+        </div>
+
+        <!-- JUEGOS COMPRADOS -->
+        <h2>Mis Juegos Comprados</h2>
+        <div class="juegos-comprados">
+
+            <!-- Tarjetas de ejemplo -->
+            <div class="juego-card">
+                <img src="MARVEL.jpeg.JPG" alt="Spider-Man">
+                <h4>Marvel's Spider-Man</h4>
+                <p>Comprado el: 12/10/2024</p>
+            </div>
+
+            <div class="juego-card">
+                <img src="FIFA26.jpg" alt="FIFA 26">
+                <h4>FIFA 26</h4>
+                <p>Comprado el: 05/11/2024</p>
+            </div>
+
+            <div class="juego-card">
+                <img src="neo-racing.jpeg.jpeg" alt="Neo Racing">
+                <h4>Neo Racing</h4>
+                <p>Comprado el: 20/09/2024</p>
+            </div>
+
+        </div>
+
+        <!-- BOTÓN PARA VOLVER -->
+        <a href="index.html" class="boton-volver">← Volver a la Tienda</a>
+
+    </div>
+
+    <!-- SCRIPT: Lee la sesión guardada y rellena los datos -->
+    <script>
+        try {
+            const sesion = JSON.parse(localStorage.getItem('sesion') || 'null');
+
+            if (sesion) {
+                document.getElementById('saludo-perfil').textContent = 'Bienvenido, ' + sesion.nombre;
+                document.getElementById('perfil-nombre').textContent = sesion.nombre;
+                document.getElementById('perfil-correo').textContent = sesion.correo;
+            } else {
+                // Si no hay sesión activa, redirige al index
+                window.location.href = 'index.html';
+            }
+        } catch (e) {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>

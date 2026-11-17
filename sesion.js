@@ -24,19 +24,32 @@ function actualizarMenu() {
     try {
         actual = JSON.parse(localStorage.getItem('sesion') || 'null');
     } catch (e) {}
-    enlaceMenu.textContent = actual ? 'Hola, ' + actual.nombre + ' (Salir)' : 'Iniciar sesión';
+
+   
+    const menuUsuario = document.getElementById('menu-usuario');
+    const spanNombre = document.getElementById('nombre-usuario');
+
+    if (actual) {
+        
+        enlaceMenu.style.display = 'none'; 
+        if (menuUsuario) {
+            menuUsuario.style.display = 'flex';
+            spanNombre.textContent = actual.nombre;
+        }
+    } else {
+        
+        enlaceMenu.style.display = 'inline';
+        if (menuUsuario) {
+            menuUsuario.style.display = 'none';
+        }
+    }
 }
 
-// Clic en el menú: abre la ventana o cierra la sesión
+// Clic en "Iniciar sesión": abre el modal
 enlaceMenu.addEventListener('click', function (e) {
     e.preventDefault();
-    if (localStorage.getItem('sesion')) {
-        localStorage.removeItem('sesion');
-        actualizarMenu();
-    } else {
-        mensaje.textContent = '';
-        modal.classList.add('activa');
-    }
+    mensaje.textContent = '';
+    modal.classList.add('activa');
 });
 
 // Cerrar con la X o haciendo clic fuera de la caja
@@ -109,3 +122,13 @@ formLogin.addEventListener('submit', function (e) {
 });
 
 actualizarMenu();
+
+// Clic en "(Salir)" del menú de usuario
+const btnSalir = document.getElementById('cerrar-sesion-usuario');
+if (btnSalir) {
+    btnSalir.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('sesion');
+        actualizarMenu();
+    });
+}

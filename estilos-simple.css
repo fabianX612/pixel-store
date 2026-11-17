@@ -837,19 +837,93 @@ body.sin-scroll { overflow: hidden; }
     .lista-otros { grid-template-columns: 1fr; }
     .pago-caja { padding: 20px 16px; }
 }
-.btn-fav {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
+
+/* === Estilos del Perfil de Usuario === */
+
+.encabezado-perfil {
+    padding: 20px;
+    border-bottom: 2px solid #FFD700;
+    text-align: center;
 }
 
-.btn-fav.activo {
-    color: #ff4d6d;
+.contenedor-perfil {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
 }
 
-.contador-fav {
-    color: #50dabb;
-    font-size: 12px;
+.contenedor-perfil h1 {
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.contenedor-perfil h2 {
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #FFD700;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-info h3 {
+    color: #FFD700;
+    margin-top: 0;
+}
+
+.tarjeta-info p {
+    margin: 8px 0;
+}
+
+.juegos-comprados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.juego-card {
+    background: #2d1b4e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.juego-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.juego-card h4 {
+    margin: 10px 0 5px;
+}
+
+.juego-card p {
+    color: #aaa;
+    font-size: 14px;
+    margin: 0;
+}
+
+.boton-volver {
+    display: inline-block;
+    margin-top: 30px;
+    background: #FFD700;
+    color: #17052e;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.boton-volver:hover {
+    background: #e6c200;
 }
