@@ -8,7 +8,7 @@
 /* ---------- CONFIGURACIÓN: cambia estos datos por los tuyos ---------- */
 const CONFIG_PAGO = {
     qrImagen: "yape-qr.png",       // tu imagen del QR (ponla junto a index.html)
-    yapeNumero: "999 999 999",     // número de Yape que verán los clientes
+    yapeNumero: "990023438",     // número de Yape que verán los clientes
     titular: "Nombre del titular", // nombre que sale en Yape
     whatsapp: ""                   // opcional, con código de país. Ej: "51999999999"
 };
