@@ -927,3 +927,19 @@ body.sin-scroll { overflow: hidden; }
 .boton-volver:hover {
     background: #e6c200;
 }
+.btn-fav {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.btn-fav.activo {
+    color: #ff4d6d;
+}
+
+.contador-fav {
+    color: #50dabb;
+    font-size: 12px;
+}
