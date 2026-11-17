@@ -424,3 +424,14 @@ button.cerrar-sesion {
     font-size: 14px;
 }
  
+/* ===== REDES SOCIALES ===== */
+.redes-sociales {
+    text-align: center;
+    padding: 25px;
+}
+
+.redes-sociales a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
