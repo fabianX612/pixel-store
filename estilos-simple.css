@@ -943,3 +943,26 @@ body.sin-scroll { overflow: hidden; }
     color: #50dabb;
     font-size: 12px;
 }
+
+/* ===== MEJORAS DEL INICIO DE SESION ===== */
+.campo-clave { display:flex; align-items:center; gap:8px; margin-bottom:18px; }
+.campo-clave input { flex:1; min-width:0; margin-bottom:0; }
+.ver-clave { padding:12px; background-color:#7c5cff; color:white; border:none; border-radius:5px; cursor:pointer; font-size:13px; }
+.ver-clave:hover { background-color:#6040d8; }
+.opciones-login { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:18px; font-size:12px; }
+.recordar { display:flex; align-items:center; gap:6px; margin:0; }
+.recordar input { width:auto; margin:0; }
+.opciones-login a { color:#ffe600; text-decoration:none; }
+.opciones-login a:hover { text-decoration:underline; }
+.separador { display:flex; align-items:center; gap:10px; margin:22px 0 15px; color:#bdb0d4; font-size:12px; }
+.separador::before, .separador::after { content:""; flex:1; height:1px; background-color:#513477; }
+.botones-sociales { display:flex; gap:8px; }
+.social { flex:1; padding:10px 5px; border:1px solid #70549a; border-radius:5px; background-color:#24094f; color:white; cursor:pointer; font-size:12px; }
+.social:hover { background-color:#452078; }
+.texto-ayuda { color:#d1c4e9; font-size:13px; line-height:1.5; margin-bottom:15px; }
+.mensaje-sesion { text-align:center; line-height:1.5; }
+@media (max-width:480px) {
+    .opciones-login { flex-wrap:wrap; }
+    .botones-sociales { flex-direction:column; }
+}
+
