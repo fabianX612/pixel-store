@@ -27,16 +27,6 @@ body {
     justify-content: space-between;
 
     padding: 15px 60px;
-    /* REGISTRARSE */
-    .acceso {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.acceso span {
-    color: white;
-}
 }
 
 /* NOMBRE DE LA TIENDA */
@@ -85,16 +75,6 @@ body {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
-
-/* Cashback */
-.etiqueta-cashback {
-    display: inline-block;
-    background-color: #50dabb;
-    color: #171a21;
-    padding: 7px;
-    font-weight: bold;
-}
-    
 }
 
 /* TÍTULO DE LA PORTADA */
@@ -444,14 +424,3 @@ button.cerrar-sesion {
     font-size: 14px;
 }
  
-/* ===== REDES SOCIALES ===== */
-.redes-sociales {
-    text-align: center;
-    padding: 25px;
-}
-
-.redes-sociales a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}

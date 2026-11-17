@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego - Pixel Store</title>
+
+    <!-- FUENTE ARCADE (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos-simple.css">
+</head>
+
+<body>
+
+<!-- MENU PRINCIPAL -->
+<header class="encabezado">
+    <h1 class="logo"><a href="index.html">Pixel Store</a></h1>
+
+    <nav class="menu">
+        <a href="index.html">Tienda</a>
+        <a href="index.html#juegos">Juegos</a>
+        <a href="index.html#streaming">Streaming</a>
+    </nav>
+</header>
+
+<!-- AQUÍ SE DIBUJA EL JUEGO (lo arma juego.js) -->
+<main class="detalle" id="detalle">
+    <p>Cargando...</p>
+</main>
+
+<!-- OTROS JUEGOS -->
+<section class="seccion-juegos otros">
+    <h2>También te puede gustar</h2>
+    <div class="lista-otros" id="otros-juegos"></div>
+</section>
+
+<script src="juegos.js"></script>
+<script src="juego.js"></script>
+<script src="pagos.js"></script>
+
+</body>
+
+</html>
