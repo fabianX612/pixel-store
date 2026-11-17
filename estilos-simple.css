@@ -837,3 +837,19 @@ body.sin-scroll { overflow: hidden; }
     .lista-otros { grid-template-columns: 1fr; }
     .pago-caja { padding: 20px 16px; }
 }
+.btn-fav {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.btn-fav.activo {
+    color: #ff4d6d;
+}
+
+.contador-fav {
+    color: #50dabb;
+    font-size: 12px;
+}
