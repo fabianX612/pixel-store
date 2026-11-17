@@ -62,8 +62,13 @@
 
     <!-- SCRIPT: Lee la sesión guardada y rellena los datos -->
     <script>
-        try {
-            const sesion = JSON.parse(localStorage.getItem('sesion') || 'null');
+            try {
+            const sesion = JSON.parse(
+                sessionStorage.getItem('sesion') ||
+                localStorage.getItem('sesion') ||
+                'null'
+            );
+
 
             if (sesion) {
                 document.getElementById('saludo-perfil').textContent = 'Bienvenido, ' + sesion.nombre;
