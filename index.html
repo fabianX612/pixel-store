@@ -386,52 +386,74 @@
 </section>
 <!-- FIN SECCION DE JUEGOS -->
 
-<!-- VENTANA DE INICIO DE SESION Y REGISTRO -->
+<!-- VENTANA DE INICIO DE SESION, REGISTRO Y RECUPERACION -->
 <div class="ventana-sesion" id="ventana-sesion">
     <div class="caja-sesion">
- 
         <button type="button" class="cerrar-sesion" id="cerrar-sesion">✕</button>
- 
-        <!-- FORMULARIO: INGRESAR -->
+
         <form class="formulario-sesion" id="form-login">
             <h2>Iniciar sesión</h2>
- 
             <label for="login-correo">Correo electrónico</label>
             <input type="email" id="login-correo" placeholder="tucorreo@ejemplo.com" required>
- 
             <label for="login-clave">Contraseña</label>
-            <input type="password" id="login-clave" placeholder="Tu contraseña" required>
- 
+            <div class="campo-clave">
+                <input type="password" id="login-clave" placeholder="Tu contraseña" required>
+                <button type="button" class="ver-clave" data-campo="login-clave">Mostrar</button>
+            </div>
+            <div class="opciones-login">
+                <label class="recordar"><input type="checkbox" id="recordar-sesion"> Recordarme</label>
+                <a href="#" id="ir-recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
             <button type="submit" class="boton">Ingresar</button>
- 
-            <p class="texto-registro">
-                ¿No tienes cuenta? <a href="#" id="ir-registro">Regístrate</a>
-            </p>
+            <div class="separador"><span>O continúa con</span></div>
+            <div class="botones-sociales">
+                <button type="button" class="social">Google</button>
+                <button type="button" class="social">Facebook</button>
+                <button type="button" class="social">Steam</button>
+            </div>
+            <p class="texto-registro">¿No tienes cuenta? <a href="#" id="ir-registro">Regístrate</a></p>
         </form>
- 
-        <!-- FORMULARIO: REGISTRARSE -->
+
         <form class="formulario-sesion" id="form-registro" style="display:none">
             <h2>Crear cuenta</h2>
- 
             <label for="reg-nombre">Nombre</label>
             <input type="text" id="reg-nombre" placeholder="Tu nombre" required>
- 
             <label for="reg-correo">Correo electrónico</label>
             <input type="email" id="reg-correo" placeholder="tucorreo@ejemplo.com" required>
- 
             <label for="reg-clave">Contraseña (mínimo 6 caracteres)</label>
-            <input type="password" id="reg-clave" minlength="6" required>
- 
+            <div class="campo-clave">
+                <input type="password" id="reg-clave" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="reg-clave">Mostrar</button>
+            </div>
+            <label for="reg-confirmar">Confirmar contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="reg-confirmar" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="reg-confirmar">Mostrar</button>
+            </div>
             <button type="submit" class="boton">Registrarme</button>
- 
-            <p class="texto-registro">
-                ¿Ya tienes cuenta? <a href="#" id="ir-login">Inicia sesión</a>
-            </p>
+            <p class="texto-registro">¿Ya tienes cuenta? <a href="#" id="ir-login">Inicia sesión</a></p>
         </form>
- 
-        <!-- MENSAJES DE ERROR O EXITO -->
+
+        <form class="formulario-sesion" id="form-recuperar" style="display:none">
+            <h2>Recuperar contraseña</h2>
+            <p class="texto-ayuda">Escribe el correo electrónico con el que registraste tu cuenta.</p>
+            <label for="rec-correo">Correo electrónico</label>
+            <input type="email" id="rec-correo" placeholder="tucorreo@ejemplo.com" required>
+            <label for="rec-clave">Nueva contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="rec-clave" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="rec-clave">Mostrar</button>
+            </div>
+            <label for="rec-confirmar">Confirmar nueva contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="rec-confirmar" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="rec-confirmar">Mostrar</button>
+            </div>
+            <button type="submit" class="boton">Cambiar contraseña</button>
+            <p class="texto-registro"><a href="#" id="volver-login">Volver al inicio de sesión</a></p>
+        </form>
+
         <p id="mensaje-sesion" class="mensaje-sesion"></p>
- 
     </div>
 </div>
  
