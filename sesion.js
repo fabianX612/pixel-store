@@ -1,110 +1,172 @@
+// ===== ELEMENTOS PRINCIPALES =====
 const modal = document.getElementById('ventana-sesion');
 const formLogin = document.getElementById('form-login');
 const formRegistro = document.getElementById('form-registro');
+const formRecuperar = document.getElementById('form-recuperar');
 const mensaje = document.getElementById('mensaje-sesion');
 const enlaceMenu = document.getElementById('abrir-sesion');
+const menuUsuario = document.getElementById('menu-usuario');
+const spanNombre = document.getElementById('nombre-usuario');
+const btnSalir = document.getElementById('cerrar-sesion-usuario');
 
-// Lee la lista de usuarios guardados en el navegador
+// ===== LEER USUARIOS GUARDADOS =====
 function leerUsuarios() {
     try {
         return JSON.parse(localStorage.getItem('usuarios') || '[]');
-    } catch (e) {
+    } catch (error) {
         return [];
     }
 }
 
-function mostrarMensaje(texto, ok) {
+// ===== MOSTRAR MENSAJES =====
+function mostrarMensaje(texto, correcto) {
     mensaje.textContent = texto;
-    mensaje.style.color = ok ? '#4cd964' : '#ff6b6b';
+    mensaje.style.color = correcto ? '#4cd964' : '#ff6b6b';
 }
 
-// Cambia el texto del menú según haya sesión o no
-function actualizarMenu() {
-    let actual = null;
+// ===== OBTENER SESION ACTUAL =====
+function obtenerSesion() {
     try {
-        actual = JSON.parse(localStorage.getItem('sesion') || 'null');
-    } catch (e) {}
-
-   
-    const menuUsuario = document.getElementById('menu-usuario');
-    const spanNombre = document.getElementById('nombre-usuario');
-
-    if (actual) {
-        
-        enlaceMenu.style.display = 'none'; 
-        if (menuUsuario) {
-            menuUsuario.style.display = 'flex';
-            spanNombre.textContent = actual.nombre;
-        }
-    } else {
-        
-        enlaceMenu.style.display = 'inline';
-        if (menuUsuario) {
-            menuUsuario.style.display = 'none';
-        }
+        return JSON.parse(
+            sessionStorage.getItem('sesion') ||
+            localStorage.getItem('sesion') ||
+            'null'
+        );
+    } catch (error) {
+        return null;
     }
 }
 
-// Clic en "Iniciar sesión": abre el modal
+// ===== ACTUALIZAR MENU DE USUARIO =====
+function actualizarMenu() {
+    const actual = obtenerSesion();
+
+    if (actual) {
+        enlaceMenu.style.display = 'none';
+        menuUsuario.style.display = 'flex';
+        spanNombre.textContent = actual.nombre || 'Usuario';
+    } else {
+        enlaceMenu.style.display = 'inline';
+        menuUsuario.style.display = 'none';
+    }
+}
+
+// ===== CAMBIAR FORMULARIOS =====
+function mostrarFormulario(formulario) {
+    formLogin.style.display = 'none';
+    formRegistro.style.display = 'none';
+    formRecuperar.style.display = 'none';
+    formulario.style.display = 'flex';
+    mensaje.textContent = '';
+}
+
+// ===== ABRIR VENTANA DE INICIO DE SESION =====
 enlaceMenu.addEventListener('click', function (e) {
     e.preventDefault();
-    mensaje.textContent = '';
+    mostrarFormulario(formLogin);
     modal.classList.add('activa');
 });
 
-// Cerrar con la X o haciendo clic fuera de la caja
+// ===== CERRAR SESION DESDE EL MENU =====
+if (btnSalir) {
+    btnSalir.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('sesion');
+        sessionStorage.removeItem('sesion');
+        actualizarMenu();
+    });
+}
+
+// ===== CERRAR VENTANA =====
 document.getElementById('cerrar-sesion').addEventListener('click', function () {
     modal.classList.remove('activa');
 });
+
 modal.addEventListener('click', function (e) {
-    if (e.target === modal) modal.classList.remove('activa');
+    if (e.target === modal) {
+        modal.classList.remove('activa');
+    }
 });
 
-// Cambiar entre ingresar y registrarse
+// ===== MOSTRAR Y OCULTAR CONTRASEÑA =====
+document.querySelectorAll('.ver-clave').forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        const campo = document.getElementById(boton.dataset.campo);
+        if (!campo) return;
+
+        if (campo.type === 'password') {
+            campo.type = 'text';
+            boton.textContent = 'Ocultar';
+        } else {
+            campo.type = 'password';
+            boton.textContent = 'Mostrar';
+        }
+    });
+});
+
+// ===== IR A REGISTRO =====
 document.getElementById('ir-registro').addEventListener('click', function (e) {
     e.preventDefault();
-    formLogin.style.display = 'none';
-    formRegistro.style.display = 'flex';
-    mensaje.textContent = '';
+    formRegistro.reset();
+    mostrarFormulario(formRegistro);
 });
+
+// ===== VOLVER A LOGIN =====
 document.getElementById('ir-login').addEventListener('click', function (e) {
     e.preventDefault();
-    formRegistro.style.display = 'none';
-    formLogin.style.display = 'flex';
-    mensaje.textContent = '';
+    formLogin.reset();
+    mostrarFormulario(formLogin);
 });
 
-// Registrar usuario
+document.getElementById('volver-login').addEventListener('click', function (e) {
+    e.preventDefault();
+    formRecuperar.reset();
+    mostrarFormulario(formLogin);
+});
+
+// ===== IR A RECUPERAR CONTRASEÑA =====
+document.getElementById('ir-recuperar').addEventListener('click', function (e) {
+    e.preventDefault();
+    formRecuperar.reset();
+    mostrarFormulario(formRecuperar);
+});
+
+// ===== REGISTRAR USUARIO =====
 formRegistro.addEventListener('submit', function (e) {
     e.preventDefault();
-    const usuarios = leerUsuarios();
-    const correo = document.getElementById('reg-correo').value.trim().toLowerCase();
 
-    if (usuarios.some(function (u) { return u.correo === correo; })) {
+    const usuarios = leerUsuarios();
+    const nombre = document.getElementById('reg-nombre').value.trim();
+    const correo = document.getElementById('reg-correo').value.trim().toLowerCase();
+    const clave = document.getElementById('reg-clave').value;
+    const confirmar = document.getElementById('reg-confirmar').value;
+
+    if (clave.length < 6) {
+        mostrarMensaje('La contraseña debe tener al menos 6 caracteres', false);
+        return;
+    }
+    if (clave !== confirmar) {
+        mostrarMensaje('Las contraseñas no coinciden', false);
+        return;
+    }
+    if (usuarios.some(function (usuario) { return usuario.correo === correo; })) {
         mostrarMensaje('Ese correo ya está registrado', false);
         return;
     }
 
-    usuarios.push({
-        nombre: document.getElementById('reg-nombre').value.trim(),
-        correo: correo,
-        clave: document.getElementById('reg-clave').value
-    });
+    usuarios.push({ nombre: nombre, correo: correo, clave: clave });
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     formRegistro.reset();
-
-    // Pasa al formulario de ingreso con el mensaje de éxito
-    formRegistro.style.display = 'none';
-    formLogin.style.display = 'flex';
+    mostrarFormulario(formLogin);
     mostrarMensaje('Cuenta creada. Ahora inicia sesión', true);
 });
 
-// Iniciar sesión
+// ===== INICIAR SESION =====
 formLogin.addEventListener('submit', function (e) {
     e.preventDefault();
+
     const correo = document.getElementById('login-correo').value.trim().toLowerCase();
     const clave = document.getElementById('login-clave').value;
-
     const usuario = leerUsuarios().find(function (u) {
         return u.correo === correo && u.clave === clave;
     });
@@ -114,21 +176,53 @@ formLogin.addEventListener('submit', function (e) {
         return;
     }
 
-    localStorage.setItem('sesion', JSON.stringify({ nombre: usuario.nombre, correo: usuario.correo }));
-    modal.classList.remove('activa');
+    const datosSesion = { nombre: usuario.nombre, correo: usuario.correo };
+    const recordar = document.getElementById('recordar-sesion').checked;
+
+    localStorage.removeItem('sesion');
+    sessionStorage.removeItem('sesion');
+
+    if (recordar) {
+        localStorage.setItem('sesion', JSON.stringify(datosSesion));
+    } else {
+        sessionStorage.setItem('sesion', JSON.stringify(datosSesion));
+    }
+
     formLogin.reset();
+    modal.classList.remove('activa');
     mensaje.textContent = '';
     actualizarMenu();
 });
 
-actualizarMenu();
+// ===== RECUPERAR CONTRASEÑA (SIMULACION LOCAL) =====
+formRecuperar.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-// Clic en "(Salir)" del menú de usuario
-const btnSalir = document.getElementById('cerrar-sesion-usuario');
-if (btnSalir) {
-    btnSalir.addEventListener('click', function (e) {
-        e.preventDefault();
-        localStorage.removeItem('sesion');
-        actualizarMenu();
-    });
-}
+    const correo = document.getElementById('rec-correo').value.trim().toLowerCase();
+    const clave = document.getElementById('rec-clave').value;
+    const confirmar = document.getElementById('rec-confirmar').value;
+    const usuarios = leerUsuarios();
+    const posicion = usuarios.findIndex(function (u) { return u.correo === correo; });
+
+    if (posicion === -1) {
+        mostrarMensaje('No existe una cuenta con ese correo', false);
+        return;
+    }
+    if (clave.length < 6) {
+        mostrarMensaje('La contraseña debe tener al menos 6 caracteres', false);
+        return;
+    }
+    if (clave !== confirmar) {
+        mostrarMensaje('Las contraseñas no coinciden', false);
+        return;
+    }
+
+    usuarios[posicion].clave = clave;
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    formRecuperar.reset();
+    mostrarFormulario(formLogin);
+    mostrarMensaje('Contraseña actualizada correctamente', true);
+});
+
+// ===== INICIO =====
+actualizarMenu();
