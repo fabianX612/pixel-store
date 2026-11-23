@@ -106,6 +106,13 @@
             <option value="accion">Acción</option>
             <option value="terror">Terror</option>
         </select>
+        
+        <!-- FILTRO DE ORDEN POR PRECIO -->
+         <select id="ordenar-precio" onchange="ordenarPrecio(this.value)">
+            <option value="">Ordenar por precio</option>
+            <option value="asc">Menor a mayor</option>
+            <option value="desc">Mayor a menor</option>
+        </select>
 
         <!-- FILTRO DE PRECIO -->
         <select id="filtro-precio">
@@ -495,6 +502,8 @@
 <script src="pagos.js"></script>
 <script src="favoritos.js"></script>
 <script src="menu.js"></script>
+<!-- BOTÓN IR ARRIBA -->
+<button id="btn-ir-arriba" class="boton-arriba" onclick="irArriba()" title="Ir al inicio"></button>
 
 </body>
 </html>
