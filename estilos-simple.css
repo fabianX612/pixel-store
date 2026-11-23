@@ -2004,3 +2004,51 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
     .opciones-login { flex-wrap: wrap; }
     .botones-sociales { flex-direction: column; }
 }
+
+/* =========================================
+   ESTILOS PARA EL MENÚ HAMBURGUESA (MÓVIL)
+   ========================================= */
+
+/* Ocultar el botón hamburguesa en pantallas grandes (PC) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white; /* Ajusta según el color de tu texto */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+    /* 1. Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* 2. Ocultar el menú de navegación por defecto */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Ajusta esto a la altura de tu header */
+        left: 0;
+        width: 100%;
+        background-color: #171a21; /* Color de fondo de tu tienda */
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* 3. Cuando tenga la clase 'active', se muestra */
+    .nav-links.active {
+        display: block;
+    }
+
+    /* 4. Acomodar los enlaces en columna para celular */
+    .nav-links .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
