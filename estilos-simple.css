@@ -2063,23 +2063,21 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
 }
 
 /* Estilos para el botón de ir arriba */
+
 .boton-arriba {
-    position: fixed; /* Lo saca del flujo y lo fija en la pantalla */
-    bottom: 30px;
-    right: 30px;
-    background-color: #FFD700; /* Amarillo de tu tienda */
-    color: #171a21; /* Texto oscuro */
-    border: none;
-    border-radius: 50%; /* Lo hace redondo */
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    display: none; /* IMPORTANTE: Oculto hasta que bajemos */
-    z-index: 9999; /* Muy alto para que pase por encima de todo */
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
-}
-.boton-arriba:hover {
-    transform: scale(1.1);
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: #FFD700 !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    display: block !important; /* Forzamos a que sea visible */
+    z-index: 99999 !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.8) !important;
 }
