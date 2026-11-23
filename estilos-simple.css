@@ -2064,11 +2064,11 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
 
 /* Estilos para el botón de ir arriba */
 .boton-arriba {
-    position: fixed;
+    position: fixed; /* Lo saca del flujo y lo fija en la pantalla */
     bottom: 30px;
     right: 30px;
-    background-color: #FFD700; /* El amarillo de tu tienda */
-    color: #171a21;
+    background-color: #FFD700; /* Amarillo de tu tienda */
+    color: #171a21; /* Texto oscuro */
     border: none;
     border-radius: 50%; /* Lo hace redondo */
     width: 50px;
@@ -2076,12 +2076,10 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    display: none; /* Oculto por defecto, se muestra con JS */
-    z-index: 1000;
+    display: none; /* IMPORTANTE: Oculto hasta que bajemos */
+    z-index: 9999; /* Muy alto para que pase por encima de todo */
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.2s;
 }
-
 .boton-arriba:hover {
-    transform: scale(1.1); /* Se hace un poco más grande al pasar el mouse */
+    transform: scale(1.1);
 }
