@@ -2009,46 +2009,56 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
    ESTILOS PARA EL MENÚ HAMBURGUESA (MÓVIL)
    ========================================= */
 
-/* Ocultar el botón hamburguesa en pantallas grandes (PC) */
+/* 1. Estilo base del botón hamburguesa (oculto en PC) */
 .menu-toggle {
     display: none;
-    background: none;
+    background: transparent;
     border: none;
-    color: white; /* Ajusta según el color de tu texto */
+    color: white; /* Color de la línea */
     font-size: 30px;
     cursor: pointer;
+    margin-right: 15px;
 }
 
-/* Estilos para celulares (pantallas menores a 768px) */
+/* 2. El contenedor de los enlaces en PC */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* 3. LA MAGIA: Ajustes solo para celulares (pantallas menores a 768px) */
 @media (max-width: 768px) {
-    /* 1. Mostrar el botón hamburguesa */
+    /* Mostramos el botón ≡ */
     .menu-toggle {
         display: block;
     }
 
-    /* 2. Ocultar el menú de navegación por defecto */
+    /* Ocultamos el menú de enlaces por defecto */
     .nav-links {
-        display: none;
+        display: none; 
+        flex-direction: column;
         position: absolute;
-        top: 60px; /* Ajusta esto a la altura de tu header */
-        left: 0;
+        top: 70px; /* Ajusta según la altura de tu header */
+        right: 0;
         width: 100%;
-        background-color: #171a21; /* Color de fondo de tu tienda */
-        z-index: 1000;
+        background-color: #171a21; /* Fondo oscuro de tu tienda */
         padding: 20px 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        z-index: 1000; /* Para que quede encima de la portada de GTA */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* 3. Cuando tenga la clase 'active', se muestra */
-    .nav-links.active {
-        display: block;
-    }
-
-    /* 4. Acomodar los enlaces en columna para celular */
+    /* Tu menú original (nav.menu) debe acomodarse en columna */
     .nav-links .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        width: 100%;
+    }
+
+    /* Cuando JavaScript active el menú, se muestra */
+    .nav-links.active {
+        display: flex;
     }
 }
+
