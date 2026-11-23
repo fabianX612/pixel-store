@@ -16,6 +16,12 @@
     --texto-suave: #c9bfe0;
     --texto-tenue: #9d90bb;
     --rojo: #ff4d6d;
+    --oscuro: #0d0221;            /* texto sobre botones amarillos/turquesa */
+    --amarillo-texto: #ffe600;    /* amarillo usado como color de letra */
+    --turquesa-texto: #50dabb;    /* turquesa usado como color de letra */
+    --linea: rgba(255, 255, 255, 0.08);
+    --fondo-menu: rgba(26, 6, 56, 0.88);
+    --fondo-suave: rgba(26, 6, 56, 0.6);
     --verde: #4cd964;
 
     --radio: 14px;
@@ -59,7 +65,7 @@ img {
 
 ::selection {
     background-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
 }
 
 /* BARRA DE DESPLAZAMIENTO */
@@ -101,7 +107,7 @@ select:focus-visible {
     top: 0;
     z-index: 500;
 
-    background-color: rgba(26, 6, 56, 0.88);
+    background-color: var(--fondo-menu);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -130,7 +136,7 @@ select:focus-visible {
 
 /* NOMBRE DE LA TIENDA */
 .logo {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-family: var(--fuente-titulo);
     font-size: 20px;
     letter-spacing: 1px;
@@ -139,23 +145,6 @@ select:focus-visible {
 
 .logo a { color: inherit; text-decoration: none; }
 
-/* INSIGNIA "P" ANTES DEL NOMBRE */
-.logo::before {
-    content: "P";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin-right: 12px;
-    vertical-align: middle;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--amarillo), var(--turquesa));
-    color: var(--fondo);
-    font-size: 14px;
-    text-shadow: none;
-    box-shadow: var(--brillo-amarillo);
-}
 
 /* OPCIONES DEL MENÚ */
 .menu {
@@ -180,19 +169,19 @@ select:focus-visible {
 
 /* EFECTO DEL MENÚ */
 .menu a:hover {
-    color: var(--amarillo);
-    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--amarillo-texto);
+    background-color: var(--linea);
 }
 
 /* BOTÓN "INICIAR SESIÓN" DESTACADO */
 #abrir-sesion {
     border: 1px solid var(--turquesa);
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
 }
 
 #abrir-sesion:hover {
     background-color: var(--turquesa);
-    color: var(--fondo);
+    color: var(--oscuro);
     box-shadow: var(--brillo-turquesa);
 }
 
@@ -201,7 +190,7 @@ select:focus-visible {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     background-color: rgba(80, 218, 187, 0.1);
     border: 1px solid rgba(80, 218, 187, 0.35);
     border-radius: 999px;
@@ -211,7 +200,7 @@ select:focus-visible {
 }
 
 #total-fav {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-weight: bold;
 }
 
@@ -221,7 +210,7 @@ select:focus-visible {
 }
 
 #enlace-perfil {
-    color: var(--amarillo) !important;
+    color: var(--amarillo-texto) !important;
     background-color: rgba(255, 230, 0, 0.08);
 }
 
@@ -247,7 +236,7 @@ select:focus-visible {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--linea);
 }
 
 /* CONTENEDOR DE LA IMAGEN DE FONDO */
@@ -296,7 +285,7 @@ select:focus-visible {
 /* TEXTO JUEGOS PARA TODOS */
 .destacado {
     display: inline-block;
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     font-family: var(--fuente-texto);
     font-size: 13px;
     font-weight: bold;
@@ -342,7 +331,7 @@ select:focus-visible {
     display: inline-block;
 
     background-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
 
     font-family: var(--fuente-texto);
     font-size: 15px;
@@ -385,7 +374,7 @@ select:focus-visible {
     font-family: var(--fuente-titulo);
     font-size: 20px;
     line-height: 1.5;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     margin: 0 auto 35px;
     max-width: 1400px;
     padding-bottom: 16px;
@@ -483,7 +472,7 @@ select:focus-visible {
 .boton-buscar {
     padding: 13px 28px;
     background-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
 
     border: none;
     border-radius: var(--radio-chico);
@@ -504,7 +493,7 @@ select:focus-visible {
 #resultado-busqueda {
     max-width: 1400px;
     margin: 0 auto 25px;
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     font-size: 14px;
     font-weight: 600;
 }
@@ -561,7 +550,7 @@ select:focus-visible {
     bottom: 0;
     width: 100%;
     height: 45%;
-    background: linear-gradient(0deg, rgba(26, 6, 56, 0.9), transparent);
+    background: linear-gradient(0deg, var(--panel-2), transparent);
     pointer-events: none;
 }
 
@@ -611,7 +600,7 @@ select:focus-visible {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
 
-    color: var(--blanco);
+    color: #ffffff;
     font-size: 20px;
     line-height: 1;
     cursor: pointer;
@@ -636,7 +625,7 @@ select:focus-visible {
     width: max-content;
 
     background-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
 
     padding: 4px 11px;
     margin: 16px 18px 0;
@@ -665,13 +654,13 @@ select:focus-visible {
     transition: color 0.25s ease;
 }
 
-.tarjeta-juego:hover h3 a { color: var(--amarillo); }
+.tarjeta-juego:hover h3 a { color: var(--amarillo-texto); }
 
 /* CATEGORÍA DEL JUEGO (como etiqueta) */
 .tarjeta-juego p {
     width: max-content;
     max-width: calc(100% - 36px);
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     background-color: rgba(80, 218, 187, 0.12);
     border-radius: 6px;
     padding: 3px 9px;
@@ -686,7 +675,7 @@ select:focus-visible {
 .compra {
     margin: auto 18px 18px;
     padding-top: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--linea);
 
     display: flex;
     align-items: center;
@@ -698,14 +687,14 @@ select:focus-visible {
 .compra span {
     font-size: 20px;
     font-weight: 800;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
 }
 
 /* BOTÓN COMPRAR */
 .compra button,
 .btn-comprar {
     background-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
     border: none;
     border-radius: 8px;
     padding: 10px 18px;
@@ -821,7 +810,7 @@ button.cerrar-sesion {
     right: 12px;
     width: 34px;
     height: 34px;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: var(--linea);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     color: var(--blanco);
@@ -845,7 +834,7 @@ button.cerrar-sesion:hover {
     font-family: var(--fuente-titulo);
     font-size: 15px;
     line-height: 1.6;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     text-align: center;
     margin-bottom: 24px;
 }
@@ -902,7 +891,7 @@ button.cerrar-sesion:hover {
     padding: 12px;
     min-width: 80px;
     background-color: rgba(80, 218, 187, 0.12);
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     border: 1px solid rgba(80, 218, 187, 0.4);
     border-radius: var(--radio-chico);
     cursor: pointer;
@@ -913,7 +902,7 @@ button.cerrar-sesion:hover {
 
 .ver-clave:hover {
     background-color: var(--turquesa);
-    color: var(--fondo);
+    color: var(--oscuro);
 }
 
 /* RECORDARME Y OLVIDÉ MI CONTRASEÑA */
@@ -941,7 +930,7 @@ button.cerrar-sesion:hover {
 }
 
 .opciones-login a {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     text-decoration: none;
 }
 
@@ -999,7 +988,7 @@ button.cerrar-sesion:hover {
 }
 
 .texto-registro a {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-weight: 600;
     text-decoration: none;
 }
@@ -1043,18 +1032,18 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .migas a {
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     font-weight: 600;
     text-decoration: none;
 }
 
-.migas a:hover { color: var(--amarillo); }
+.migas a:hover { color: var(--amarillo-texto); }
 
 .detalle-titulo {
     font-family: var(--fuente-titulo);
     font-size: 24px;
     line-height: 1.5;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     margin-bottom: 28px;
     text-shadow: 0 0 25px rgba(255, 230, 0, 0.3);
 }
@@ -1100,14 +1089,14 @@ body.sin-scroll { overflow: hidden; }
     border: 1px solid rgba(255, 230, 0, 0.4);
     border-radius: 50%;
     background-color: rgba(13, 2, 33, 0.75);
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-size: 28px;
     line-height: 1;
     cursor: pointer;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.visor-flecha:hover { background-color: var(--amarillo); color: var(--fondo); }
+.visor-flecha:hover { background-color: var(--amarillo); color: var(--oscuro); }
 .visor-flecha.izq { left: 12px; }
 .visor-flecha.der { right: 12px; }
 
@@ -1182,8 +1171,8 @@ body.sin-scroll { overflow: hidden; }
     gap: 8px 14px;
     font-size: 14px;
     padding: 14px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
 }
 
 .ficha dt { color: var(--texto-tenue); }
@@ -1194,7 +1183,7 @@ body.sin-scroll { overflow: hidden; }
 .etiqueta {
     background-color: rgba(80, 218, 187, 0.1);
     border: 1px solid rgba(80, 218, 187, 0.4);
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     border-radius: 999px;
     padding: 5px 12px;
     font-size: 12px;
@@ -1212,7 +1201,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .caja-compra .etiqueta-oferta { margin: 0; }
-.precio-grande { font-size: 30px; font-weight: 800; color: var(--amarillo); }
+.precio-grande { font-size: 30px; font-weight: 800; color: var(--amarillo-texto); }
 .boton-comprar { width: 100%; cursor: pointer; text-align: center; }
 .caja-compra small { color: var(--texto-tenue); text-align: center; }
 
@@ -1220,15 +1209,15 @@ body.sin-scroll { overflow: hidden; }
     margin-top: 40px;
     max-width: 900px;
     padding: 28px;
-    background-color: rgba(26, 6, 56, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: var(--fondo-suave);
+    border: 1px solid var(--linea);
     border-radius: 16px;
 }
 
 .detalle-descripcion h3 {
     font-family: var(--fuente-titulo);
     font-size: 14px;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     margin-bottom: 18px;
 }
 
@@ -1245,7 +1234,7 @@ body.sin-scroll { overflow: hidden; }
     margin-bottom: 25px;
     font-family: var(--fuente-titulo);
     font-size: 18px;
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
 }
 
 /* ----- OTROS JUEGOS ----- */
@@ -1283,7 +1272,7 @@ body.sin-scroll { overflow: hidden; }
     margin: 14px 16px 6px;
 }
 
-.tarjeta-mini span { color: var(--amarillo); font-weight: bold; margin: 0 16px 16px; }
+.tarjeta-mini span { color: var(--amarillo-texto); font-weight: bold; margin: 0 16px 16px; }
 
 /* =====================================================================
    VENTANA DE PAGO (YAPE)
@@ -1325,7 +1314,7 @@ body.sin-scroll { overflow: hidden; }
     right: 12px;
     width: 34px;
     height: 34px;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: var(--linea);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     color: var(--blanco);
@@ -1342,7 +1331,7 @@ body.sin-scroll { overflow: hidden; }
 /* SELLO DE YAPE (color morado de la marca) */
 .pago-yape {
     background: linear-gradient(135deg, #742284, #9b2fb0);
-    color: var(--blanco);
+    color: #ffffff;
     font-family: var(--fuente-titulo);
     font-size: 12px;
     padding: 10px 14px;
@@ -1354,7 +1343,7 @@ body.sin-scroll { overflow: hidden; }
     display: flex;
     align-items: center;
     gap: 16px;
-    background-color: rgba(13, 2, 33, 0.6);
+    background-color: var(--fondo-suave);
     border: 1px solid var(--borde);
     border-radius: 12px;
     padding: 12px;
@@ -1363,7 +1352,7 @@ body.sin-scroll { overflow: hidden; }
 
 .pago-resumen img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; }
 .pago-nombre { font-weight: bold; margin-bottom: 4px; }
-.pago-monto { font-size: 26px; font-weight: 800; color: var(--amarillo); }
+.pago-monto { font-size: 26px; font-weight: 800; color: var(--amarillo-texto); }
 
 .pago-cuerpo { display: grid; grid-template-columns: 240px 1fr; gap: 28px; }
 
@@ -1373,7 +1362,7 @@ body.sin-scroll { overflow: hidden; }
 .pago-qr img {
     display: none;
     width: 100%;
-    background-color: var(--blanco);
+    background-color: #ffffff;
     padding: 10px;
     border-radius: 12px;
 }
@@ -1425,7 +1414,7 @@ body.sin-scroll { overflow: hidden; }
 .pago-enviar { width: 100%; cursor: pointer; text-align: center; }
 
 .pago-ok { text-align: center; padding: 20px 10px; }
-.pago-ok h2 { margin: 14px 0 18px; font-size: 24px; color: var(--amarillo); }
+.pago-ok h2 { margin: 14px 0 18px; font-size: 24px; color: var(--amarillo-texto); }
 .pago-ok p { margin-bottom: 12px; line-height: 1.6; color: var(--texto-suave); }
 .pago-ok p strong { color: var(--blanco); }
 .pago-ok .boton { margin: 10px 0; cursor: pointer; }
@@ -1436,7 +1425,7 @@ body.sin-scroll { overflow: hidden; }
     margin: auto;
     border-radius: 50%;
     background-color: var(--turquesa);
-    color: var(--fondo);
+    color: var(--oscuro);
     font-size: 40px;
     font-weight: bold;
     line-height: 76px;
@@ -1457,14 +1446,14 @@ body.sin-scroll { overflow: hidden; }
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.pago-btn-secundario:hover { background-color: var(--blanco); color: var(--fondo); }
+.pago-btn-secundario:hover { background-color: var(--blanco); color: var(--oscuro); }
 
 /* =====================================================================
    PERFIL DE USUARIO
    ===================================================================== */
 .encabezado-perfil {
     padding: 22px 20px;
-    background-color: rgba(26, 6, 56, 0.9);
+    background-color: var(--fondo-menu);
     border-bottom: 2px solid var(--amarillo);
     text-align: center;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
@@ -1478,7 +1467,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .contenedor-perfil h1 {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-family: var(--fuente-titulo);
     font-size: 20px;
     line-height: 1.5;
@@ -1486,7 +1475,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .contenedor-perfil h2 {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-family: var(--fuente-titulo);
     font-size: 15px;
     line-height: 1.5;
@@ -1504,7 +1493,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .tarjeta-info h3 {
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 18px;
@@ -1579,7 +1568,7 @@ body.sin-scroll { overflow: hidden; }
    ===================================================================== */
 .footer {
     position: relative;
-    background: linear-gradient(180deg, var(--panel) 0%, #10032a 100%);
+    background: linear-gradient(180deg, var(--panel) 0%, var(--fondo) 100%);
     border-top: 1px solid rgba(255, 230, 0, 0.25);
     text-align: center;
     padding: 45px 20px 30px;
@@ -1598,7 +1587,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .footer h2 {
-    color: var(--amarillo);
+    color: var(--amarillo-texto);
     font-family: var(--fuente-titulo);
     font-size: 16px;
     margin-bottom: 14px;
@@ -1619,7 +1608,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .redes-sociales a {
-    color: var(--turquesa);
+    color: var(--turquesa-texto);
     text-decoration: none;
     font-weight: bold;
     padding: 9px 20px;
@@ -1631,7 +1620,7 @@ body.sin-scroll { overflow: hidden; }
 .redes-sociales a:hover {
     background-color: var(--amarillo);
     border-color: var(--amarillo);
-    color: var(--fondo);
+    color: var(--oscuro);
     transform: translateY(-2px);
 }
 
@@ -1640,8 +1629,191 @@ body.sin-scroll { overflow: hidden; }
     font-size: 12px;
     padding-top: 18px;
     margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--linea);
 }
+
+/* =====================================================================
+   ÍCONOS VECTORIALES (SVG)
+   Cada ícono es un dibujo SVG guardado en una variable. Se usa como
+   "máscara", así toma el color del texto y se adapta al modo claro.
+   ===================================================================== */
+:root {
+    --icono-carrito: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='20' r='1.5'/%3E%3Ccircle cx='19' cy='20' r='1.5'/%3E%3Cpath d='M1 2h4l2.6 12.4a2 2 0 0 0 2 1.6h9a2 2 0 0 0 2-1.6L22 7H6'/%3E%3C/svg%3E");
+    --icono-usuario: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7'/%3E%3C/svg%3E");
+    --icono-corazon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.7 1-1a5.5 5.5 0 0 0 0-7.7z'/%3E%3C/svg%3E");
+    --icono-lupa: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.5' y2='16.5'/%3E%3C/svg%3E");
+    --icono-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    --icono-control: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='12' rx='6'/%3E%3Cline x1='6' y1='12' x2='10' y2='12'/%3E%3Cline x1='8' y1='10' x2='8' y2='14'/%3E%3Cline x1='15' y1='11' x2='15.01' y2='11'/%3E%3Cline x1='18' y1='13' x2='18.01' y2='13'/%3E%3C/svg%3E");
+    --icono-enlace: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7'/%3E%3Cpath d='M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7'/%3E%3C/svg%3E");
+    --icono-ficha: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Ccircle cx='8' cy='11' r='2.5'/%3E%3Cpath d='M4.5 17c.6-2 2-3 3.5-3s2.9 1 3.5 3'/%3E%3Cline x1='14' y1='10' x2='19' y2='10'/%3E%3Cline x1='14' y1='14' x2='18' y2='14'/%3E%3C/svg%3E");
+    --icono-salir: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpolyline points='16 17 21 12 16 7'/%3E%3Cline x1='21' y1='12' x2='9' y2='12'/%3E%3C/svg%3E");
+    --icono-mando: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='10' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+}
+
+/* ESTILO COMÚN DE TODOS LOS ÍCONOS */
+.compra button::before,
+.boton-comprar::before,
+#abrir-sesion::before,
+#enlace-perfil::before,
+#cerrar-sesion-usuario::before,
+.contador-fav::before,
+.boton-buscar::before,
+.pago-enviar::before,
+.contenido-portada .boton::before,
+.redes-sociales a::before,
+.tarjeta-info h3::before,
+.caja-compra small::before {
+    content: "";
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    margin-right: 0.45em;
+    vertical-align: -0.18em;
+    background-color: currentColor;
+    -webkit-mask: var(--icono) no-repeat center / contain;
+    mask: var(--icono) no-repeat center / contain;
+}
+
+/* QUÉ ÍCONO LLEVA CADA ELEMENTO */
+.compra button::before,
+.boton-comprar::before          { --icono: var(--icono-carrito); }
+#abrir-sesion::before,
+#enlace-perfil::before          { --icono: var(--icono-usuario); }
+#cerrar-sesion-usuario::before  { --icono: var(--icono-salir); }
+.contador-fav::before           { --icono: var(--icono-corazon); margin-right: 0.2em; }
+.boton-buscar::before           { --icono: var(--icono-lupa); }
+.pago-enviar::before            { --icono: var(--icono-check); }
+.contenido-portada .boton::before { --icono: var(--icono-control); width: 1.3em; height: 1.3em; vertical-align: -0.28em; }
+.redes-sociales a::before       { --icono: var(--icono-enlace); }
+.tarjeta-info h3::before        { --icono: var(--icono-ficha); }
+.caja-compra small::before      { --icono: var(--icono-mando); width: 0.95em; height: 0.95em; margin-right: 0.35em; }
+
+/* ===== COMPRAS REALES EN EL PERFIL ===== */
+.juego-card .compra-precio {
+    color: var(--amarillo-texto);
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.compra-estado {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: rgba(80, 218, 187, 0.12);
+    color: var(--turquesa-texto);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* =====================================================================
+   BOTÓN PARA CAMBIAR ENTRE MODO OSCURO Y CLARO
+   ===================================================================== */
+.boton-tema {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borde);
+    border-radius: 50%;
+    background-color: var(--panel-2);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.boton-tema:hover {
+    transform: rotate(20deg) scale(1.08);
+    border-color: var(--amarillo);
+}
+
+/* Botón en el encabezado del perfil */
+.encabezado-perfil {
+    position: relative;
+}
+
+.encabezado-perfil .boton-tema {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.encabezado-perfil .boton-tema:hover {
+    transform: translateY(-50%) rotate(20deg) scale(1.08);
+}
+
+/* =====================================================================
+   MODO CLARO (se activa con la clase "modo-claro" en <html>)
+   Solo cambia las variables de color: el diseño es el mismo.
+   ===================================================================== */
+html.modo-claro {
+    --fondo: #f4f0ff;
+    --panel: #ffffff;
+    --panel-2: #f1ebff;
+    --borde: #d9ccf5;
+    --blanco: #1a0638;            /* en modo claro el texto principal es oscuro */
+    --texto-suave: #4a3b6b;
+    --texto-tenue: #75689a;
+    --amarillo-texto: #9a7400;
+    --turquesa-texto: #0b8a6f;
+    --linea: rgba(26, 6, 56, 0.1);
+    --fondo-menu: rgba(255, 255, 255, 0.9);
+    --fondo-suave: rgba(255, 255, 255, 0.75);
+    --sombra: 0 10px 25px rgba(60, 20, 120, 0.12);
+    --brillo-amarillo: 0 6px 18px rgba(230, 190, 0, 0.35);
+    color-scheme: light;
+}
+
+html.modo-claro body {
+    background-image:
+        radial-gradient(circle at 15% 0%, rgba(80, 218, 187, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(255, 230, 0, 0.12), transparent 35%);
+}
+
+/* El logo amarillo necesita fondo oscuro: se usa morado */
+html.modo-claro .logo {
+    color: #5b1fb0;
+    animation: none;
+    text-shadow: none;
+}
+
+/* La portada mantiene su estilo oscuro porque va sobre la imagen */
+html.modo-claro .portada {
+    --blanco: #ffffff;
+    --texto-suave: #e2d9f5;
+    --amarillo-texto: #ffe600;
+    --turquesa-texto: #50dabb;
+}
+
+/* Bordes amarillos más visibles sobre fondo claro */
+html.modo-claro .tarjeta-juego,
+html.modo-claro .tarjeta-mini,
+html.modo-claro .tarjeta-streaming,
+html.modo-claro .juego-card,
+html.modo-claro .buscador-filtros,
+html.modo-claro .detalle-lateral {
+    border-color: var(--borde);
+}
+
+html.modo-claro .tarjeta-juego:hover,
+html.modo-claro .tarjeta-mini:hover,
+html.modo-claro .juego-card:hover {
+    border-color: #e6c800;
+    box-shadow: 0 16px 30px rgba(60, 20, 120, 0.18);
+}
+
+html.modo-claro .visor-flecha { color: #ffe600; }
+
+html.modo-claro .ventana-sesion,
+html.modo-claro .pago-ventana {
+    background-color: rgba(40, 20, 80, 0.45);
+}
+
+html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
 
 /* =====================================================================
    CATÁLOGO CON BARRA LATERAL DE FILTROS (solo en la tienda, PC)
@@ -1679,9 +1851,9 @@ body.sin-scroll { overflow: hidden; }
         content: "Filtros";
         font-family: var(--fuente-titulo);
         font-size: 13px;
-        color: var(--amarillo);
+        color: var(--amarillo-texto);
         padding-bottom: 12px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid var(--linea);
     }
 
     #juegos .buscador-filtros input[type="text"],
@@ -1766,8 +1938,7 @@ body.sin-scroll { overflow: hidden; }
         padding: 14px 15px;
     }
 
-    .logo { font-size: 15px; }
-    .logo::before { width: 30px; height: 30px; margin-right: 8px; font-size: 12px; }
+    .logo { font-size: 16px; }
 
     .menu { gap: 4px; }
 

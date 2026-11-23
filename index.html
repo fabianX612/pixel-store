@@ -13,6 +13,9 @@
 
     <!-- VINCULO AL ARCHIVO DE ESTILOS -->
     <link rel="stylesheet" href="estilos-simple.css">
+
+    <!-- MODO OSCURO / CLARO (va aquí para que no parpadee) -->
+    <script src="tema.js"></script>
 </head>
 
 <body>
@@ -32,6 +35,9 @@
     <!-- BOTÓN PARA INICIAR SESIÓN (se oculta al loguearse) -->
     <a href="#" id="abrir-sesion">Iniciar sesión</a>
     <span class="contador-fav">Favoritos: <span id="total-fav">0</span></span>
+
+    <!-- BOTÓN MODO OSCURO / CLARO -->
+    <button type="button" class="boton-tema" id="boton-tema" aria-label="Cambiar entre modo oscuro y claro">☀️</button>
     
     <!-- NUEVO: MENÚ DE USUARIO (oculto por defecto) -->
     <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">

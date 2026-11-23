@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi perfil en Pixel Store: mis datos y los videojuegos que compré.">
+    <meta name="keywords" content="videojuegos, tienda de juegos, juegos digitales, ofertas, PC, PlayStation, Xbox, Yape, Perú">
+    <meta name="author" content="Equipo Pixel Store">
+    <meta name="theme-color" content="#0d0221">
+
+    <!-- ÍCONO DE LA PESTAÑA (imagen vectorial SVG) -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Mi Perfil - Pixel Store</title>
 
     <!-- FUENTE ARCADE -->
@@ -10,11 +17,15 @@
     
     <!-- TUS ESTILOS GENERALES (que ahora incluyen los del perfil) -->
     <link rel="stylesheet" href="estilos-simple.css">
+
+    <!-- MODO OSCURO / CLARO -->
+    <script src="tema.js"></script>
 </head>
 <body>
 
     <header class="encabezado-perfil">
         <h1 class="logo">Pixel Store</h1>
+        <button type="button" class="boton-tema" id="boton-tema" aria-label="Cambiar entre modo oscuro y claro">☀️</button>
     </header>
 
     <div class="contenedor-perfil">
@@ -34,7 +45,8 @@
         <h2>Mis Juegos Comprados</h2>
         <div class="juegos-comprados">
 
-            <!-- Tarjetas de ejemplo -->
+            <!-- Tarjetas de ejemplo: el script de abajo las reemplaza
+                 por las compras reales hechas con Yape -->
             <div class="juego-card">
                 <img src="MARVEL.jpeg.JPG" alt="Spider-Man">
                 <h4>Marvel's Spider-Man</h4>
@@ -62,6 +74,62 @@
 
     <!-- SCRIPT: Lee la sesión guardada y rellena los datos -->
     <script>
+        // ===== MOSTRAR LAS COMPRAS REALES (pedidos guardados por pagos.js) =====
+        function mostrarCompras(sesion) {
+            let pedidos = [];
+            try {
+                pedidos = JSON.parse(localStorage.getItem('pedidos') || '[]');
+            } catch (e) {
+                pedidos = [];
+            }
+
+            // Solo los pedidos hechos con el correo de este usuario
+            const correo = (sesion.correo || '').toLowerCase();
+            const mios = pedidos.filter(function (p) {
+                return (p.correo || '').toLowerCase() === correo;
+            });
+
+            const contenedor = document.querySelector('.juegos-comprados');
+
+            // Si aún no compró nada, se dejan las tarjetas de ejemplo
+            if (mios.length === 0) return;
+
+            contenedor.innerHTML = '';
+
+            // Del más reciente al más antiguo
+            mios.reverse().forEach(function (p) {
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'juego-card';
+
+                if (p.imagen) {
+                    const img = document.createElement('img');
+                    img.src = p.imagen;
+                    img.alt = p.producto;
+                    tarjeta.appendChild(img);
+                }
+
+                const titulo = document.createElement('h4');
+                titulo.textContent = p.producto;
+
+                const precio = document.createElement('p');
+                precio.className = 'compra-precio';
+                precio.textContent = 'S/ ' + Number(p.precio).toFixed(2);
+
+                const fecha = document.createElement('p');
+                fecha.textContent = 'Comprado el: ' + new Date(p.fecha).toLocaleDateString('es-PE');
+
+                const estado = document.createElement('span');
+                estado.className = 'compra-estado';
+                estado.textContent = p.estado + ' · ' + p.codigo;
+
+                tarjeta.appendChild(titulo);
+                tarjeta.appendChild(precio);
+                tarjeta.appendChild(fecha);
+                tarjeta.appendChild(estado);
+                contenedor.appendChild(tarjeta);
+            });
+        }
+
             try {
             const sesion = JSON.parse(
                 sessionStorage.getItem('sesion') ||
@@ -74,6 +142,7 @@
                 document.getElementById('saludo-perfil').textContent = 'Bienvenido, ' + sesion.nombre;
                 document.getElementById('perfil-nombre').textContent = sesion.nombre;
                 document.getElementById('perfil-correo').textContent = sesion.correo;
+                mostrarCompras(sesion);
             } else {
                 // Si no hay sesión activa, redirige al index
                 window.location.href = 'index.html';

@@ -134,7 +134,12 @@ const CONFIG_PAGO = {
 
         // Si hay sesión iniciada, rellena los datos
         try {
-            const s = JSON.parse(localStorage.getItem("sesion") || "null");
+            // La sesión puede estar en sessionStorage (sin "Recordarme") o en localStorage
+            const s = JSON.parse(
+                sessionStorage.getItem("sesion") ||
+                localStorage.getItem("sesion") ||
+                "null"
+            );
             if (s) {
                 document.getElementById("pago-nombre-cliente").value = s.nombre || "";
                 document.getElementById("pago-correo").value = s.correo || "";
@@ -159,6 +164,7 @@ const CONFIG_PAGO = {
         const pedido = {
             codigo: "PX-" + Date.now().toString(36).toUpperCase().slice(-6),
             producto: producto.nombre,
+            imagen: producto.imagen || "",
             precio: producto.precio,
             cliente: document.getElementById("pago-nombre-cliente").value.trim(),
             correo: document.getElementById("pago-correo").value.trim(),
