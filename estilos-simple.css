@@ -966,3 +966,49 @@ body.sin-scroll { overflow: hidden; }
     .botones-sociales { flex-direction:column; }
 }
 
+
+/* ===== REDES SOCIALES PIXEL STORE ===== */
+
+.footer {
+    background: #1a0638;
+    border-top: 4px solid #ffe600;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer h2 {
+    color: #ffe600;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: white;
+    margin: 12px 0;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.redes-sociales a {
+    color: #50dabb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.redes-sociales a:hover {
+    color: #ffe600;
+}
+
+.footer .copyright {
+    color: #aaa;
+    font-size: 12px;
+}
