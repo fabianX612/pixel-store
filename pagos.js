@@ -1,16 +1,12 @@
 /* =====================================================================
    VENTANA DE PAGO CON YAPE
-   Funciona en toda la tienda: cualquier botón "Comprar" dentro de
-   una ".compra" (juegos y streaming) o con el atributo data-comprar
-   abre esta ventana automáticamente.
    ===================================================================== */
 
-/* ---------- CONFIGURACIÓN: cambia estos datos por los tuyos ---------- */
 const CONFIG_PAGO = {
-    qrImagen: "yape-qr.png",       // tu imagen del QR (ponla junto a index.html)
-    yapeNumero: "990023438",     // número de Yape que verán los clientes
-    titular: "Nombre del titular", // nombre que sale en Yape
-    whatsapp: ""                   // opcional, con código de país. Ej: "51999999999"
+    qrImagen: "yape-qr.png",       
+    yapeNumero: "990023438",     
+    titular: "Nombre del titular", 
+    whatsapp: ""                   
 };
 
 (function () {
@@ -20,7 +16,6 @@ const CONFIG_PAGO = {
         return "S/ " + Number(n).toFixed(2);
     }
 
-    /* ---------- CREA LA VENTANA (una sola vez) ---------- */
     function crearVentana() {
         const v = document.createElement("div");
         v.className = "pago-ventana";
@@ -29,7 +24,6 @@ const CONFIG_PAGO = {
         <div class="pago-caja" role="dialog" aria-modal="true" aria-labelledby="pago-titulo">
             <button type="button" class="pago-cerrar" id="pago-cerrar" aria-label="Cerrar">✕</button>
 
-            <!-- PASO 1: PAGAR -->
             <div id="pago-paso-1">
                 <div class="pago-cabecera">
                     <span class="pago-yape">Yape</span>
@@ -79,7 +73,6 @@ const CONFIG_PAGO = {
                 </div>
             </div>
 
-            <!-- PASO 2: CONFIRMACIÓN -->
             <div id="pago-paso-2" style="display:none">
                 <div class="pago-ok">
                     <div class="pago-ok-icono">✓</div>
@@ -100,7 +93,6 @@ const CONFIG_PAGO = {
         document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrar(); });
         document.getElementById("pago-form").addEventListener("submit", enviarPedido);
 
-        // Si no existe la imagen del QR, muestra el aviso
         const qr = document.getElementById("pago-qr-img");
         qr.addEventListener("error", function () {
             qr.style.display = "none";
@@ -112,7 +104,6 @@ const CONFIG_PAGO = {
         });
     }
 
-    /* ---------- ABRIR / CERRAR ---------- */
     function abrir(p) {
         producto = p;
         if (!document.getElementById("pago-ventana")) crearVentana();
@@ -132,9 +123,7 @@ const CONFIG_PAGO = {
         document.getElementById("pago-qr-archivo").textContent = CONFIG_PAGO.qrImagen;
         document.getElementById("pago-qr-img").src = CONFIG_PAGO.qrImagen;
 
-        // Si hay sesión iniciada, rellena los datos
         try {
-            // La sesión puede estar en sessionStorage (sin "Recordarme") o en localStorage
             const s = JSON.parse(
                 sessionStorage.getItem("sesion") ||
                 localStorage.getItem("sesion") ||
@@ -157,7 +146,6 @@ const CONFIG_PAGO = {
         document.body.classList.remove("sin-scroll");
     }
 
-    /* ---------- ENVIAR PEDIDO ---------- */
     function enviarPedido(e) {
         e.preventDefault();
 
@@ -173,7 +161,6 @@ const CONFIG_PAGO = {
             estado: "pendiente de verificación"
         };
 
-        // Se guarda en este navegador (sin servidor no hay otro lugar)
         try {
             const lista = JSON.parse(localStorage.getItem("pedidos") || "[]");
             lista.push(pedido);
@@ -201,14 +188,28 @@ const CONFIG_PAGO = {
         document.getElementById("pago-paso-2").style.display = "";
     }
 
-    /* ---------- BOTONES "COMPRAR" DE TODA LA TIENDA ---------- */
     document.addEventListener("click", function (e) {
         const boton = e.target.closest(".compra button, [data-comprar]");
         if (!boton) return;
         e.preventDefault();
         e.stopPropagation();
 
-        // Botón con datos propios (página de detalle)
+        // =========================================================
+        // LÓGICA DEL DESCUENTO (Semana 12 - prompt, if/else)
+        // =========================================================
+        let codigo = prompt("🎮 ¡Hola Gamer!\nIngresa un código de descuento (Prueba con: GAMER10):");
+        
+        if (codigo !== null) { 
+            if (codigo.toUpperCase() === "GAMER10") {
+                alert("✅ ¡Descuento del 10% aplicado exitosamente!");
+                console.log("Código aplicado: GAMER10");
+            } else {
+                alert("❌ Código inválido. Se cobrará el precio completo.");
+                console.log("Intento inválido: " + codigo);
+            }
+        }
+        // =========================================================
+
         if (boton.dataset.nombre) {
             abrir({
                 nombre: boton.dataset.nombre,
@@ -218,7 +219,6 @@ const CONFIG_PAGO = {
             return;
         }
 
-        // Botón dentro de una tarjeta (tienda): lee nombre, precio e imagen
         const tarjeta = boton.closest(".tarjeta-juego, .tarjeta-streaming");
         if (!tarjeta) return;
 

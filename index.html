@@ -4,17 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- TITULO DEL PROYECTO -->
     <title>Pixel Store</title>
-
-    <!-- FUENTE ARCADE (Google Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-    <!-- VINCULO AL ARCHIVO DE ESTILOS -->
     <link rel="stylesheet" href="estilos-simple.css">
-
-    <!-- MODO OSCURO / CLARO (va aquí para que no parpadee) -->
     <script src="tema.js"></script>
 </head>
 
@@ -22,81 +14,58 @@
 
 <!-- MENU PRINCIPAL -->
 <header class="encabezado">
-
-    <!-- NOMBRE DE LA TIENDA -->
     <h1 class="logo">Pixel Store</h1>
     
-     <!-- Boton de menu para celulares-->
+    <!-- Boton de menu para celulares-->
     <button type="button" class="menu-toggle" id="menu-toggle">☰</button>
 
-    <!-- OPCIONES DEL MENU -->
-    <div class="nav-links" id="nav-links"><div>
-    
-<nav class="menu">
-    <a href="index.html">Tienda</a>
-    <a href="categorias.html">Categorías</a>
-    <a href="ofertas.html">Ofertas</a>
-    
-    <!-- BOTÓN PARA INICIAR SESIÓN (se oculta al loguearse) -->
-    <a href="#" id="abrir-sesion">Iniciar sesión</a>
-    <span class="contador-fav">Favoritos: <span id="total-fav">0</span></span>
+    <!-- OPCIONES DEL MENU (CORREGIDO) -->
+    <div class="nav-links" id="nav-links">
+        <nav class="menu">
+            <a href="index.html">Tienda</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="ofertas.html">Ofertas</a>
+            
+            <!-- BOTÓN PARA INICIAR SESIÓN -->
+            <a href="#" id="abrir-sesion">Iniciar sesión</a>
+            <span class="contador-fav">Favoritos: <span id="total-fav">0</span></span>
 
-    <!-- BOTÓN MODO OSCURO / CLARO -->
-    <button type="button" class="boton-tema" id="boton-tema" aria-label="Cambiar entre modo oscuro y claro">☀️</button>
-    
-    <!-- NUEVO: MENÚ DE USUARIO (oculto por defecto) -->
-    <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
-        <!-- Este enlace lleva al perfil -->
-        <a href="perfil.html" id="enlace-perfil" style="color: #FFD700; text-decoration: none; font-weight: bold;">
-            Hola, <span id="nombre-usuario">Usuario</span>
-        </a>
-        <a href="#" id="cerrar-sesion-usuario" style="color: white; text-decoration: none;">(Salir)</a>
+            <!-- BOTÓN MODO OSCURO / CLARO -->
+            <button type="button" class="boton-tema" id="boton-tema" aria-label="Cambiar entre modo oscuro y claro">☀️</button>
+            
+            <!-- MENÚ DE USUARIO -->
+            <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
+                <a href="perfil.html" id="enlace-perfil" style="color: #FFD700; text-decoration: none; font-weight: bold;">
+                    Hola, <span id="nombre-usuario">Usuario</span>
+                </a>
+                <a href="#" id="cerrar-sesion-usuario" style="color: white; text-decoration: none;">(Salir)</a>
+            </div>
+        </nav>
     </div>
-</nav>
-
 </header>
 
 <!-- PORTADA PRINCIPAL -->
 <section class="portada">
-
-    <!-- IMAGEN DE FONDO -->
     <div class="imagen-portada">
-    <img src="gta6-banner.png" alt="Promoción de GTA VI">
+        <img src="gta6-banner.png" alt="Promoción de GTA VI">
     </div>
-
-    <!-- CAPA OSCURA DE SOBREPOSICIÓN (OPCIONAL, MEJORA LECTURA DEL TEXTO) -->
     <div class="capa-oscura"></div>
-
-    <!-- TEXTO DE LA PORTADA -->
     <div class="contenido-portada">
         <p class="destacado">Juegos para todos</p>
         <h2>Encuentra tu próximo juego favorito</h2>
-        <p>
-            Busca, compara y descubre juegos que se adapten
-            a tus gustos y presupuesto.
-        </p>
+        <p>Busca, compara y descubre juegos que se adapten a tus gustos y presupuesto.</p>
         <a href="#juegos" class="boton">Explorar juegos</a>
     </div>
-
 </section>
-
 
 <!-- SECCION DE JUEGOS -->
 <section class="seccion-juegos" id="juegos">
-
     <h2>Juegos destacados</h2>
 
     <!-- BUSCADOR Y FILTROS -->
     <div class="buscador-filtros">
+        <input type="text" id="buscador" placeholder="Buscar videojuego">
 
-        <!-- BUSCADOR -->
-        <input
-            type="text"
-            id="buscador"
-            placeholder="Buscar videojuego"
-        >
-
-        <!-- FILTRO DE CATEGORIAS -->
         <select id="filtro-categorias">
             <option value="">Todas las categorías</option>
             <option value="carreras">Carreras</option>
@@ -106,15 +75,14 @@
             <option value="accion">Acción</option>
             <option value="terror">Terror</option>
         </select>
-        
-        <!-- FILTRO DE ORDEN POR PRECIO -->
-         <select id="ordenar-precio" onchange="ordenarPrecio(this.value)">
+
+        <!-- FILTRO DE ORDEN POR PRECIO (Corregido para llamar a ordenarJuegos) -->
+        <select id="ordenar-precio" onchange="ordenarJuegos(this.value)">
             <option value="">Ordenar por precio</option>
-            <option value="asc">Menor a mayor</option>
-            <option value="desc">Mayor a menor</option>
+            <option value="menor">Menor a mayor</option>
+            <option value="mayor">Mayor a menor</option>
         </select>
 
-        <!-- FILTRO DE PRECIO -->
         <select id="filtro-precio">
             <option value="">Todos los precios</option>
             <option value="0-50">S/ 0 - S/ 50</option>
@@ -123,284 +91,238 @@
             <option value="201-300">S/ 201 - S/ 300</option>
         </select>
 
-        <button type="button" class="boton-buscar">
-            Buscar
-        </button>
-
+        <button type="button" class="boton-buscar">Buscar</button>
     </div>
 
     <!-- LISTA DE JUEGOS -->
     <div class="lista-juegos">
-
         <!-- PRIMER JUEGO -->
         <div class="tarjeta-juego" data-id="neo-racing">
-
             <div class="imagen-juego">
                 <img src="neo-racing.jpeg.jpeg" alt="Portada de Neo Racing">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=neo-racing">NEO RACING</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>CARRERAS</p>
-
             <div class="compra">
                 <span>S/ 19.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- SEGUNDO JUEGO -->
         <div class="tarjeta-juego" data-id="spider-man">
-
             <div class="imagen-juego">
                 <img src="MARVEL.jpeg.JPG" alt="Portada de Marvel's Spider-Man">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=spider-man">MARVEL'S SPIDER-MAN</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
-
             <div class="compra">
                 <span>S/ 79.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- TERCER JUEGO -->
         <div class="tarjeta-juego" data-id="fifa-26">
-
             <div class="imagen-juego">
                 <img src="FIFA26.jpg" alt="Portada de FIFA 26">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=fifa-26">FIFA 26</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>DEPORTES</p>
-
             <div class="compra">
                 <span>S/ 149.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- CUARTO JUEGO -->
         <div class="tarjeta-juego" data-id="left-4-dead-2">
-
             <div class="imagen-juego">
                 <img src="LEFT.jpeg" alt="Portada de Left 4 Dead 2">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <span class="etiqueta-oferta">OFERTA</span>
-
             <h3><a href="juego.html?id=left-4-dead-2">LEFT 4 DEAD 2</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>DISPAROS Y AVENTURA</p>
-
             <div class="compra">
                 <span>S/ 8.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- QUINTO JUEGO -->
         <div class="tarjeta-juego" data-id="the-last-of-us">
-
             <div class="imagen-juego">
                 <img src="the last of us.jpeg" alt="Portada de The Last of Us">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=the-last-of-us">THE LAST OF US™ PARTE I</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
-
             <div class="compra">
                 <span>S/ 99.50</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- SEXTO JUEGO -->
         <div class="tarjeta-juego" data-id="dark-souls-3">
-
             <div class="imagen-juego">
                 <img src="DarkSoulsIII.jpeg" alt="Portada de Dark Souls III">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=dark-souls-3">DARK SOULS III</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
-
             <div class="compra">
                 <span>S/ 172.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- SEPTIMO JUEGO -->
         <div class="tarjeta-juego" data-id="red-dead-redemption-2">
-
             <div class="imagen-juego">
                 <img src="red dead.jpeg" alt="Portada de Red Dead Redemption 2">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=red-dead-redemption-2">RED DEAD REDEMPTION 2</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
-
             <div class="compra">
                 <span>S/ 219.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- OCTAVO JUEGO -->
         <div class="tarjeta-juego" data-id="black-myth-wukong">
-
             <div class="imagen-juego">
                 <img src="black myth wukong.jpeg" alt="Portada de Black Myth Wukong">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=black-myth-wukong">BLACK MYTH: WUKONG</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
-
             <div class="compra">
                 <span>S/ 199.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
         <!-- NOVENO JUEGO -->
         <div class="tarjeta-juego" data-id="resident-evil-Requiem">
-
             <div class="imagen-juego">
                 <img src="resident evil.jpeg" alt="Portada de Resident Evil 4 Remake">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-
             <h3><a href="juego.html?id=resident-evil-4">RESIDENT EVIL 4 REMAKE</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>SUPERVIVENCIA Y TERROR</p>
-
             <div class="compra">
                 <span>S/ 120.90</span>
                 <button type="button">Comprar</button>
             </div>
-
         </div>
 
-        <!-- === TARJETA SILENT HILL === -->
-<div class="tarjeta-juego" data-id="silent-hill-f">
-    <div class="imagen-juego">
-        <img src="Silent hill f.jpeg" alt="Portada de Silent Hill f">
+        <!-- TARJETA SILENT HILL -->
+        <div class="tarjeta-juego" data-id="silent-hill-f">
+            <div class="imagen-juego">
+                <img src="Silent hill f.jpeg" alt="Portada de Silent Hill f">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
-    <h3><a href="juego.html?id=silent-hill-f">SILENT HILL f</a></h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>SUPERVIVENCIA Y TERROR</p>
-    <div class="compra">
-        <span>S/ 232.90</span>
-        <button type="button">Comprar</button>
-    </div>
-</div> 
+            </div>
+            <h3><a href="juego.html?id=silent-hill-f">SILENT HILL f</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>SUPERVIVENCIA Y TERROR</p>
+            <div class="compra">
+                <span>S/ 232.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
 
-
-<!-- TARJETA NIER: AUTOMATA -->
-<div class="tarjeta-juego" data-id="nier-automata">
-    <div class="imagen-juego">
-        <img src="nier_automata.jpeg" alt="Portada de Nier Automata">
-        <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
-    <h3><a href="juego.html?id=nier-automata">NIER: AUTOMATA</a></h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>AVENTURA Y ACCIÓN</p>
-    <div class="compra">
-        <span>S/ 149.90</span>
-        <button type="button">Comprar</button>
-    </div>
-</div> 
-
-<!-- TARJETA The Binding of Isaac -->
-<div class="tarjeta-juego" data-id="binding-of-isaac">
-    <div class="imagen-juego">
-        <img src="isaac.jpeg" alt="Portada de The Binding of Isaac">
-        <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
-    <h3><a href="juego.html?id=binding-of-isaac">The Binding of Isaac</a></h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>Rogue like,Twin-stick Shooter,Dungeon Crawler</p>
-    <div class="compra">
-        <span>S/ 50.90</span>
-        <button type="button">Comprar</button>
-    </div>
-</div> 
-
-<!-- TARJETA ELDEN RING -->
-<div class="tarjeta-juego" data-id="elden-ring">
-    <div class="imagen-juego">
-        <img src="elden-ring.jpeg" alt="Portada de Elden Ring">
+        <!-- TARJETA NIER: AUTOMATA -->
+        <div class="tarjeta-juego" data-id="nier-automata">
+            <div class="imagen-juego">
+                <img src="nier_automata.jpeg" alt="Portada de Nier Automata">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
+            </div>
+            <h3><a href="juego.html?id=nier-automata">NIER: AUTOMATA</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 149.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
 
-    <h3><a href="juego.html?id=elden-ring">ELDEN RING</a></h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>AVENTURA Y ACCIÓN</p>
+        <!-- TARJETA The Binding of Isaac -->
+        <div class="tarjeta-juego" data-id="binding-of-isaac">
+            <div class="imagen-juego">
+                <img src="isaac.jpeg" alt="Portada de The Binding of Isaac">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=binding-of-isaac">The Binding of Isaac</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>Rogue like,Twin-stick Shooter,Dungeon Crawler</p>
+            <div class="compra">
+                <span>S/ 50.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
 
-    <div class="compra">
-        <span>S/ 199.90</span>
-        <button type="button">Comprar</button>
+        <!-- TARJETA ELDEN RING -->
+        <div class="tarjeta-juego" data-id="elden-ring">
+            <div class="imagen-juego">
+                <img src="elden-ring.jpeg" alt="Portada de Elden Ring">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=elden-ring">ELDEN RING</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 199.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+        
+        <!-- TARJETA FIFA 27 -->
+        <div class="tarjeta-juego">
+            <div class="imagen-juego">
+                <img src="fifa-27.jpeg" alt="Portada de FIFA 27">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3>FIFA 27</h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>DEPORTES</p>
+            <div class="compra">
+                <span>S/ 150.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+        
+        <!-- TARJETA DE GTA 6-->
+        <div class="tarjeta-juego">
+            <div class="imagen-juego">
+                <img src="gta-6.jpeg" alt="Portada de GTA 6">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3>GTA 6</h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 299.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
     </div>
-</div>
-<!-- TARJETA FIFA 27 -->
-<div class="tarjeta-juego">
-    <div class="imagen-juego">
-        <img src="fifa-27.jpeg" alt="Portada de FIFA 27">
-        <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
-    <h3>FIFA 27</h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>DEPORTES</p>
-    <div class="compra">
-        <span>S/ 150.90</span>
-        <button type="button">Comprar</button>
-    </div>
-</div>
-<!-- TARJETA DE GTA 6-->
-<div class="tarjeta-juego">
-    <div class="imagen-juego">
-        <img src="gta-6.jpeg" alt="Portada de GTA 6">
-        <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
-    </div>
-    <h3>GTA 6</h3>
-    <button type="button" class="btn-fav">♡</button>
-    <p>AVENTURA Y ACCIÓN</p>
-    <div class="compra">
-        <span>S/ 299.90</span>
-        <button type="button">Comprar</button>
-    </div>
-</div>
-
-    </div>
-    <!-- FIN LISTA DE JUEGOS -->
-
 </section>
-<!-- FIN SECCION DE JUEGOS -->
 
 <!-- VENTANA DE INICIO DE SESION, REGISTRO Y RECUPERACION -->
 <div class="ventana-sesion" id="ventana-sesion">
@@ -472,41 +394,33 @@
         <p id="mensaje-sesion" class="mensaje-sesion"></p>
     </div>
 </div>
+
 <!-- FOOTER DE PIXEL STORE -->
 <footer class="footer">
-
     <h2>PIXEL STORE</h2>
-
     <p>Tu tienda favorita de videojuegos.</p>
-
     <div class="redes-sociales">
         <a href="https://facebook.com/" target="_blank">Facebook</a>
         <a href="https://instagram.com/" target="_blank">Instagram</a>
         <a href="https://x.com/" target="_blank">X</a>
     </div>
-
-    <p class="copyright">
-        © 2026 Pixel Store - Todos los derechos reservados.
-    </p>
-
+    <p class="copyright">© 2026 Pixel Store - Todos los derechos reservados.</p>
 </footer>
 
- <!-- BOTÓN IR ARRIBA -->
+<!-- BOTÓN IR ARRIBA (Movido aquí para que esté antes de los scripts) -->
 <button id="btn-ir-arriba" class="boton-arriba" onclick="irArriba()" title="Ir al inicio">
-    ↑
+↑
 </button>
- 
- <!-- LOGICA DE BUSQUEDA -->
+
+<!-- SCRIPTS -->
 <script src="busqueda.js"></script>
-<!-- LOGICA DEL INICIO DE SESION -->
 <script src="sesion.js"></script>
-<!-- ABRIR DETALLE DEL JUEGO AL HACER CLIC EN LA TARJETA -->
 <script src="tienda.js"></script>
-<!-- VENTANA DE PAGO CON YAPE -->
 <script src="pagos.js"></script>
 <script src="favoritos.js"></script>
+<script src="eventos.js"></script>
 <script src="menu.js"></script>
-
+<script src="ordenar.js"></script>
 
 </body>
 </html>

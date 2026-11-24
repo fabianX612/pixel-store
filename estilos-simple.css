@@ -2009,75 +2009,63 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
    ESTILOS PARA EL MENÚ HAMBURGUESA (MÓVIL)
    ========================================= */
 
-/* 1. Estilo base del botón hamburguesa (oculto en PC) */
+/* Ocultar el botón hamburguesa en pantallas grandes (PC) */
 .menu-toggle {
     display: none;
-    background: transparent;
+    background: none;
     border: none;
-    color: white; /* Color de la línea */
+    color: white; /* Ajusta según el color de tu texto */
     font-size: 30px;
     cursor: pointer;
-    margin-right: 15px;
 }
 
-/* 2. El contenedor de los enlaces en PC */
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-/* 3. LA MAGIA: Ajustes solo para celulares (pantallas menores a 768px) */
+/* Estilos para celulares (pantallas menores a 768px) */
 @media (max-width: 768px) {
-    /* Mostramos el botón ≡ */
+    /* 1. Mostrar el botón hamburguesa */
     .menu-toggle {
         display: block;
     }
 
-    /* Ocultamos el menú de enlaces por defecto */
+    /* 2. Ocultar el menú de navegación por defecto */
     .nav-links {
-        display: none; 
-        flex-direction: column;
+        display: none;
         position: absolute;
-        top: 70px; /* Ajusta según la altura de tu header */
-        right: 0;
+        top: 60px; /* Ajusta esto a la altura de tu header */
+        left: 0;
         width: 100%;
-        background-color: #171a21; /* Fondo oscuro de tu tienda */
+        background-color: #171a21; /* Color de fondo de tu tienda */
+        z-index: 1000;
         padding: 20px 0;
-        z-index: 1000; /* Para que quede encima de la portada de GTA */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
-    /* Tu menú original (nav.menu) debe acomodarse en columna */
+    /* 3. Cuando tenga la clase 'active', se muestra */
+    .nav-links.active {
+        display: block;
+    }
+
+    /* 4. Acomodar los enlaces en columna para celular */
     .nav-links .menu {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        width: 100%;
-    }
-
-    /* Cuando JavaScript active el menú, se muestra */
-    .nav-links.active {
-        display: flex;
     }
 }
 
-/* Estilos para el botón de ir arriba */
-
 .boton-arriba {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    background-color: #FFD700 !important;
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
-    border-radius: 50% !important;
-    width: 60px !important;
-    height: 60px !important;
-    font-size: 30px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    display: block !important; /* Forzamos a que sea visible */
-    z-index: 99999 !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.8) !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFD700;
+    color: #171a21;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Oculto por defecto, JS lo muestra */
+    z-index: 9999;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
