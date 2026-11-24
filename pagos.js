@@ -194,9 +194,7 @@ const CONFIG_PAGO = {
         e.preventDefault();
         e.stopPropagation();
 
-        // =========================================================
-        // LÓGICA DEL DESCUENTO (Semana 12 - prompt, if/else)
-        // =========================================================
+        // --- CÓDIGO DE DESCUENTO ---
         let codigo = prompt("🎮 ¡Hola Gamer!\nIngresa un código de descuento (Prueba con: GAMER10):");
         
         if (codigo !== null) { 
@@ -208,8 +206,9 @@ const CONFIG_PAGO = {
                 console.log("Intento inválido: " + codigo);
             }
         }
-        // =========================================================
+        // ---------------------------
 
+        // Abrimos la ventana de pago (CORREGIDO: Aquí faltaba esta parte)
         if (boton.dataset.nombre) {
             abrir({
                 nombre: boton.dataset.nombre,

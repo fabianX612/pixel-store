@@ -2065,7 +2065,7 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
     height: 50px;
     font-size: 24px;
     cursor: pointer;
-    display: none; /* Oculto por defecto, JS lo muestra */
+    display: none; 
     z-index: 9999;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
