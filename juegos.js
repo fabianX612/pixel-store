@@ -150,7 +150,7 @@ const JUEGOS = [
         ]
     },
     {
-        id: "Resident Evil Requiem",
+       id: "Resident Evil Requiem",
         nombre: "Resident Evil Requiem",
         categoria: "SUPERVIVENCIA Y TERROR",
         precio: 120.90,
@@ -266,5 +266,6 @@ const JUEGOS = [
         descripcion: [
             " Es un título de acción y aventura en mundo abierto (sandbox) en tercera persona. El mapa se ambienta en Leonida —una versión ficticia de Florida que marca el regreso de una Vice City moderna— y ofrece exploración libre, conducción de todo tipo de vehículos, tiroteos, robos y actividades secundarias en un entorno altamente detallado y satírico"
         ]
-    }
+     }    
+
 ];
