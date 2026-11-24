@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Pixel Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos-simple.css">
+    <script src="tema.js"></script>
+</head>
+<body>
+    <header class="encabezado">
+        <h1 class="logo">Pixel Store</h1>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+        <div class="nav-links" id="nav-links">
+            <nav class="menu">
+                <a href="index.html">Tienda</a>
+                <a href="categorias.html">Categorías</a>
+                <a href="index.html#ofertas">Ofertas</a>
+                <a href="contacto.html" aria-current="page">Contacto</a>
+                <a href="index.html#abrir-sesion" id="abrir-sesion">Iniciar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contacto-contenedor">
+        <section class="contacto-intro">
+            <p class="contacto-etiqueta">PIXEL STORE</p>
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna duda, consulta o sugerencia? Completa el formulario y estaremos encantados de recibir tu mensaje.</p>
+        </section>
+
+        <section class="contacto-panel">
+            <form id="form-contacto" class="formulario-contacto" novalidate>
+                <div class="contacto-campo">
+                    <label for="contacto-nombre">Nombre completo</label>
+                    <input type="text" id="contacto-nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="contacto-correo">Correo electrónico</label>
+                    <input type="email" id="contacto-correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="contacto-asunto">Asunto</label>
+                    <input type="text" id="contacto-asunto" name="asunto" placeholder="Motivo de tu consulta" required>
+                </div>
+
+                <div class="contacto-campo">
+                    <label for="contacto-tipo">Tipo de consulta</label>
+                    <select id="contacto-tipo" name="tipo" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="compra">Consulta sobre una compra</option>
+                        <option value="producto">Información de un producto</option>
+                        <option value="problema">Reportar un problema</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="contacto-campo contacto-campo-completo">
+                    <label for="contacto-mensaje">Mensaje</label>
+                    <textarea id="contacto-mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+
+                <button type="submit" class="boton contacto-enviar">Enviar mensaje</button>
+                <p class="contacto-nota">Este formulario es una demostración del proyecto y no envía correos a un servidor.</p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h2>PIXEL STORE</h2>
+        <p>Tu tienda favorita de videojuegos.</p>
+        <div class="redes-sociales">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <p class="copyright">© 2026 Pixel Store - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="menu.js"></script>
+    <script src="contacto.js"></script>
+</body>
+</html>

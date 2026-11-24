@@ -2215,3 +2215,127 @@ html.modo-claro .tabla-ofertas tbody tr:nth-child(even) {
 html.modo-claro .tabla-ofertas .nombre-juego {
     color: #24143d;
 }
+
+/* =====================================================================
+   PÁGINA DE CONTACTO
+   ===================================================================== */
+.contacto-contenedor {
+    width: min(100% - 40px, 1000px);
+    margin: 0 auto;
+    padding: 70px 0 85px;
+}
+
+.contacto-intro {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.contacto-etiqueta {
+    color: var(--turquesa-texto);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.contacto-intro h2 {
+    color: var(--amarillo-texto);
+    font-family: var(--fuente-titulo);
+    font-size: clamp(22px, 4vw, 32px);
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.contacto-intro > p:last-child {
+    color: var(--texto-suave);
+    line-height: 1.8;
+}
+
+.contacto-panel {
+    padding: clamp(20px, 4vw, 38px);
+    background: linear-gradient(135deg, var(--panel), var(--panel-2));
+    border: 1px solid rgba(80, 218, 187, 0.3);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.formulario-contacto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.contacto-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.contacto-campo-completo {
+    grid-column: 1 / -1;
+}
+
+.contacto-campo label {
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+.contacto-campo input,
+.contacto-campo select,
+.contacto-campo textarea {
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--blanco);
+    background-color: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-chico);
+    font: inherit;
+}
+
+.contacto-campo select option {
+    color: #fff;
+    background: #171a21;
+}
+
+.contacto-campo textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contacto-campo input:focus,
+.contacto-campo select:focus,
+.contacto-campo textarea:focus {
+    outline: 2px solid var(--turquesa);
+    outline-offset: 2px;
+}
+
+.contacto-enviar {
+    justify-self: start;
+}
+
+.contacto-nota {
+    grid-column: 1 / -1;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    .contacto-contenedor {
+        width: min(100% - 28px, 1000px);
+        padding: 45px 0 60px;
+    }
+
+    .formulario-contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-campo-completo,
+    .contacto-nota {
+        grid-column: auto;
+    }
+
+    .contacto-enviar {
+        width: 100%;
+    }
+}
