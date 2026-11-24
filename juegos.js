@@ -19,7 +19,11 @@ const JUEGOS = [
         categoria: "CARRERAS",
         precio: 19.90,
         portada: "neo-racing.jpeg.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/neo-1.jpg",
+            "capturas/neo-2.jpg",
+            "capturas/neo-3.jpg"
+        ],
         video: "",
         desarrollador: "—",
         lanzamiento: "—",
@@ -36,7 +40,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 79.90,
         portada: "MARVEL.jpeg.JPG",
-        capturas: [],
+        capturas: [
+            "capturas/spiderman-1.jpg",
+            "capturas/spiderman-2.jpg",
+            "capturas/spiderman-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=q4GdJVvdxss",
         desarrollador: "Insomniac Games",
         lanzamiento: "2018 (PC: 2022)",
@@ -53,7 +61,11 @@ const JUEGOS = [
         categoria: "DEPORTES",
         precio: 149.90,
         portada: "FIFA26.jpg",
-        capturas: [],
+        capturas: [
+            "capturas/fifa26-1.jpg",
+            "capturas/fifa26-2.jpg",
+            "capturas/fifa26-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=TSi0iJYSQ24",
         desarrollador: "EA Sports",
         lanzamiento: "2025",
@@ -70,7 +82,11 @@ const JUEGOS = [
         categoria: "DISPAROS Y AVENTURA",
         precio: 8.90,
         portada: "LEFT.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/l4d2-1.jpg",
+            "capturas/l4d2-2.jpg",
+            "capturas/l4d2-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=OqUUfwSN-MY",
         desarrollador: "Valve",
         lanzamiento: "2009",
@@ -87,7 +103,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 99.50,
         portada: "the last of us.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/tlou-1.jpg",
+            "capturas/tlou-2.jpg",
+            "capturas/tlou-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=Mel8DZBEJTo",
         desarrollador: "Naughty Dog",
         lanzamiento: "2022 (PC: 2023)",
@@ -104,7 +124,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 172.90,
         portada: "DarkSoulsIII.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/ds3-1.jpg",
+            "capturas/ds3-2.jpg",
+            "capturas/ds3-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=oX0cvtjKt9E",
         desarrollador: "FromSoftware",
         lanzamiento: "2016",
@@ -121,7 +145,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 219.90,
         portada: "red dead.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/rdr2-1.jpg",
+            "capturas/rdr2-2.jpg",
+            "capturas/rdr2-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=gmA6MrX81z4",
         desarrollador: "Rockstar Games",
         lanzamiento: "2018 (PC: 2019)",
@@ -138,7 +166,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 199.90,
         portada: "black myth wukong.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/wukong-1.jpg",
+            "capturas/wukong-2.jpg",
+            "capturas/wukong-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=u83VdXAVq08",
         desarrollador: "Game Science",
         lanzamiento: "2024",
@@ -155,7 +187,11 @@ const JUEGOS = [
         categoria: "SUPERVIVENCIA Y TERROR",
         precio: 120.90,
         portada: "resident evil.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/requiem-1.jpg",
+            "capturas/requiem-2.jpg",
+            "capturas/requiem-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=8N3c044yy-M",
         desarrollador: "Capcom",
         lanzamiento: "2023",
@@ -172,7 +208,11 @@ const JUEGOS = [
         categoria: "SUPERVIVENCIA Y TERROR",
         precio: 232.90,
         portada: "Silent hill f.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/silent-hill-1.jpg",
+            "capturas/silent-hill-2.jpg",
+            "capturas/silent-hill-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=UypppJriT20",
         desarrollador: "NeoBards Entertainment / Konami",
         lanzamiento: "2025",
@@ -189,7 +229,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 149.90,
         portada: "nier_automata.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/nier-1.jpg",
+            "capturas/nier-2.jpg",
+            "capturas/nier-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=wJxNhJ8fjFk",
         desarrollador: "PlatinumGames / Square Enix",
         lanzamiento: "2017",
@@ -206,7 +250,11 @@ const JUEGOS = [
         categoria: "Rogue like,Twin-stick Shooter,Dungeon Crawler",
         precio: 50.90,
         portada: "isaac.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/isaac-1.jpg",
+            "capturas/isaac-2.jpg",
+            "capturas/isaac-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=27Le3kOOFQk",
         desarrollador: "Edmund McMillen / Nicalis",
         lanzamiento: "2011 (Rebirth: 2014)",
@@ -223,7 +271,11 @@ const JUEGOS = [
         categoria: "AVENTURA Y ACCIÓN",
         precio: 199.90,
         portada: "elden-ring.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/elden-1.jpg",
+            "capturas/elden-2.jpg",
+            "capturas/elden-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=9SOnJrVPHJo",
         desarrollador: "FromSoftware",
         lanzamiento: "2022",
@@ -240,7 +292,11 @@ const JUEGOS = [
         categoria: "Deporte",
         precio: 150.90,
         portada: "fifa-27.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/fifa27-1.jpg",
+            "capturas/fifa27-2.jpg",
+            "capturas/fifa27-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=zEcmpr1Ssr8",
         desarrollador: "EA SPORTS",
         lanzamiento: "2026",
@@ -257,7 +313,11 @@ const JUEGOS = [
         categoria: "Acción,disparos en tercera persona",
         precio: 299.90,
         portada: "gta-6.jpeg",
-        capturas: [],
+        capturas: [
+            "capturas/gta6-1.jpg",
+            "capturas/gta6-2.jpg",
+            "capturas/gta6-3.jpg"
+        ],
         video: "https://www.youtube.com/watch?v=N6f30RVHOVw",
         desarrollador: "Rockstar Games",
         lanzamiento: "19 de noviembre de 2026 ",
