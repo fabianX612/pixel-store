@@ -150,8 +150,8 @@ const JUEGOS = [
         ]
     },
     {
-        id: "resident-evil-4",
-        nombre: "RESIDENT EVIL 4 REMAKE",
+        id: "Resident Evil Requiem",
+        nombre: "Resident Evil Requiem",
         categoria: "SUPERVIVENCIA Y TERROR",
         precio: 120.90,
         portada: "resident evil.jpeg",
@@ -232,6 +232,39 @@ const JUEGOS = [
         descripcion: [
             "Levántate, Sin Luz, y recorre las Tierras Intermedias para restaurar el Círculo de Elden y convertirte en Señor del Círculo.",
             "Explora a pie o a caballo un vasto mundo abierto con mazmorras, castillos y jefes colosales. Combate exigente con libertad total para construir tu personaje."
+        ]
+    },
+    {
+        id: "FIFA 27",
+        nombre: "FIFA 27",
+        categoria: "Deporte",
+        precio: 150.90,
+        portada: "fifa-27.jpeg",
+        capturas: [],
+        video: "https://www.youtube.com/watch?v=zEcmpr1Ssr8",
+        desarrollador: "EA SPORTS",
+        lanzamiento: "2026",
+        etiquetas: [" Deportes", "Simulación", "Fútbol", "Realistas"],
+        resumen: "Es la entrega anual de simulación futbolística desarrollada por EA Vancouver y EA Romania que combina el fútbol de estadios oficiales con una nueva experiencia social de mundo abierto llamada The Grounds",
+        descripcion: [
+            "Según la descripción oficial de Electronic Arts, el juego invita a sumergirse en The World's Game mediante una jugabilidad ajustada a partir de los comentarios de la comunidad (con mayor control manual en defensa, córneres dinámicos y mejor posicionamiento ofensivo). Permite alternar entre el fútbol callejero y de estadio en The Grounds, gestionar fichajes con valoraciones dinámicas en Carrera de mánager, competir en Football Ultimate Team™ y disputar torneos licenciados con más de 21 000 futbolistas, 800 clubes, 140 estadios y 35 ligas.",
+           
+        ]
+    },
+     {
+        id: "GTA 6",
+        nombre: "Grand Theft Auto VI",
+        categoria: "Acción,disparos en tercera persona",
+        precio: 299.90,
+        portada: "gta-6.jpeg",
+        capturas: [],
+        video: "https://www.youtube.com/watch?v=N6f30RVHOVw",
+        desarrollador: "Rockstar Games",
+        lanzamiento: "19 de noviembre de 2026 ",
+        etiquetas: ["Acción,disparos en tercera persona,Aventura narrativa,Mundo abierto"],
+        resumen: "La historia sigue a una pareja de criminales, Lucía Caminos y Jason Duval (inspirados en Bonnie y Clyde), quienes tras un atraco fallido se ven envueltos en una conspiración criminal que abarca todo el estado ficticio de Leonida",
+        descripcion: [
+            " Es un título de acción y aventura en mundo abierto (sandbox) en tercera persona. El mapa se ambienta en Leonida —una versión ficticia de Florida que marca el regreso de una Vice City moderna— y ofrece exploración libre, conducción de todo tipo de vehículos, tiroteos, robos y actividades secundarias en un entorno altamente detallado y satírico"
         ]
     }
 ];
