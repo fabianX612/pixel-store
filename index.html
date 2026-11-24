@@ -25,6 +25,7 @@
             <a href="index.html">Tienda</a>
             <a href="categorias.html">Categorías</a>
             <a href="ofertas.html">Ofertas</a>
+            <a href="#ofertas">Ofertas</a>
             
             <!-- BOTÓN PARA INICIAR SESIÓN -->
             <a href="#" id="abrir-sesion">Iniciar sesión</a>
@@ -218,12 +219,12 @@
         </div>
 
         <!-- NOVENO JUEGO -->
-        <div class="tarjeta-juego" data-id="resident-evil-Requiem">
+        <div class="tarjeta-juego" data-id="Resident Evil Requiem">
             <div class="imagen-juego">
-                <img src="resident evil.jpeg" alt="Portada de Resident Evil 4 Remake">
+                <img src="resident evil.jpeg" alt="Portada de Resident Evil Requiem">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-            <h3><a href="juego.html?id=resident-evil-4">RESIDENT EVIL 4 REMAKE</a></h3>
+            <h3><a href="juego.html?id=Resident Evil Requiem">Resident Evil Requiem</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>SUPERVIVENCIA Y TERROR</p>
             <div class="compra">
@@ -293,12 +294,12 @@
         </div>
         
         <!-- TARJETA FIFA 27 -->
-        <div class="tarjeta-juego">
+        <div class="tarjeta-juego" data-id="FIFA 27">
             <div class="imagen-juego">
                 <img src="fifa-27.jpeg" alt="Portada de FIFA 27">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-            <h3>FIFA 27</h3>
+            <h3><a href="juego.html?id=FIFA 27">FIFA 27</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>DEPORTES</p>
             <div class="compra">
@@ -308,12 +309,12 @@
         </div>
         
         <!-- TARJETA DE GTA 6-->
-        <div class="tarjeta-juego">
+        <div class="tarjeta-juego"data-id="GTA 6">
             <div class="imagen-juego">
                 <img src="gta-6.jpeg" alt="Portada de GTA 6">
                 <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
             </div>
-            <h3>GTA 6</h3>
+            <h3><a href="juego.html?id=GTA 6">GTA 6</a></h3>
             <button type="button" class="btn-fav">♡</button>
             <p>AVENTURA Y ACCIÓN</p>
             <div class="compra">
@@ -411,6 +412,76 @@
 <button id="btn-ir-arriba" class="boton-arriba" onclick="irArriba()" title="Ir al inicio">
 ↑
 </button>
+
+<!--0fertas-->
+<section id="ofertas" class="pagina-ofertas">
+
+    <div class="encabezado-ofertas">
+        <h2>OFERTAS ESPECIALES</h2>
+        <p>Encuentra tus videojuegos favoritos con descuentos.</p>
+    </div>
+
+    <div class="contenedor-tabla-ofertas">
+        <div class="tabla-scroll">
+            <table class="tabla-ofertas">
+
+                <thead>
+                    <tr>
+                        <th>Juego</th>
+                        <th>Plataforma</th>
+                        <th>Precio normal</th>
+                        <th>Precio con oferta</th>
+                        <th>Descuento</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="nombre-juego">FIFA 26</td>
+                        <td>PC / PS5</td>
+                        <td class="precio-normal">S/ 149.90</td>
+                        <td class="precio-oferta">S/ 119.90</td>
+                        <td><spam class="etiqueta-descuento">20%</spam></td>
+                    </tr>
+
+                    <tr>
+                        <td class="nombre-juego">LEFT 4 DEAD 2</td>
+                        <td>PC</td>
+                        <td class="precio-normal">S/ 18.90</td>
+                        <td class="precio-oferta">S/ 8.90</td>
+                        <td><spam class="etiqueta-descuento">53%</spam></td>
+                    </tr>
+
+                    <tr>
+                        <td class="nombre-juego">DARK SOULS III</td>
+                        <td>PC / PS4</td>
+                        <td class="precio-normal">S/ 172.90</td>
+                        <td class="precio-oferta">S/ 129.90</td>
+                        <td><span class="etiqueta-descuento">25%</span></td>
+                    </tr>
+                     <tr>
+                            <td class="nombre-juego">MARVEL'S SPIDER-MAN</td>
+                            <td>PC / PS5</td>
+                            <td class="precio-normal">S/ 79.90</td>
+                            <td class="precio-oferta">S/ 59.90</td>
+                            <td><span class="etiqueta-descuento">25%</span></td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            ¡Aprovecha las ofertas de Pixel Store!
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+
+</section>
 
 <!-- SCRIPTS -->
 <script src="busqueda.js"></script>

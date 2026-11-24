@@ -2069,3 +2069,148 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
     z-index: 9999;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
 }
+
+/* ESTILOS DE LA PAGINA DE OFERTAS*/
+
+.pagina-ofertas {
+    width: min(1150px, 92%);
+    margin: auto;
+    padding: 65px 0 85px;
+    min-height: 65vh;
+}
+
+.encabezado-ofertas {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.ofertas-etiqueta {
+    color: var(--turquesa);
+    font-family: var(--fuente-titulo);
+    font-size: 10px;
+    margin-bottom: 18px;
+}
+
+.encabezado-ofertas h2 {
+    color: var(--amarillo);
+    font-family: var(--fuente-titulo);
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.encabezado-ofertas p {
+    color: var(--texto-suave);
+}
+
+.contenedor-tabla-ofertas {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    padding: 28px;
+    box-shadow: var(--sombra);
+}
+
+.contenedor-tabla-ofertas h3 {
+    color: var(--turquesa);
+    margin-bottom: 8px;
+}
+
+.nota-tabla {
+    color: var(--texto-tenue);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.tabla-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-ofertas {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    text-align: center;
+    background: var(--panel-2);
+}
+
+.tabla-ofertas th,
+.tabla-ofertas td {
+    padding: 17px 14px;
+    border: 1px solid var(--borde);
+}
+
+.tabla-ofertas thead {
+    background: var(--amarillo);
+    color: var(--oscuro);
+}
+
+.tabla-ofertas tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.035);
+}
+
+.tabla-ofertas tbody tr:hover {
+    background: rgba(80,218,187,0.12);
+}
+
+.nombre-juego {
+    color: var(--blanco);
+    font-weight: bold;
+    text-align: left;
+}
+
+.precio-normal {
+    color: var(--texto-tenue);
+    text-decoration: line-through;
+}
+
+.precio-oferta {
+    color: var(--turquesa);
+    font-weight: bold;
+}
+
+.etiqueta-descuento {
+    background: var(--rojo);
+    color: white;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.tabla-ofertas tfoot {
+    background: var(--turquesa);
+    color: var(--oscuro);
+    font-weight: bold;
+}
+
+@media (max-width: 650px) {
+    .pagina-ofertas {
+        width: 94%;
+        padding: 42px 0;
+    }
+
+    .contenedor-tabla-ofertas {
+        padding: 18px 12px;
+    }
+
+    .encabezado-ofertas h2 {
+        font-size: 20px;
+    }
+}
+
+html.modo-claro .contenedor-tabla-ofertas {
+    background: white;
+    border-color: #d8cbea;
+}
+
+html.modo-claro .tabla-ofertas {
+    background: #f4effb;
+}
+
+html.modo-claro .tabla-ofertas tbody tr:nth-child(even) {
+    background: #eae2f5;
+}
+
+html.modo-claro .tabla-ofertas .nombre-juego {
+    color: #24143d;
+}
