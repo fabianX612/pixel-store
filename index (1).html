@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos-simple.css">
+    <script src="tema.js"></script>
+</head>
+
+<body>
+
+<!-- MENU PRINCIPAL -->
+<header class="encabezado">
+    <h1 class="logo">Pixel Store</h1>
+    
+    <!-- Boton de menu para celulares-->
+    <button type="button" class="menu-toggle" id="menu-toggle">☰</button>
+
+    <!-- OPCIONES DEL MENU (CORREGIDO) -->
+    <div class="nav-links" id="nav-links">
+        <nav class="menu">
+            <a href="index.html">Tienda</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="contacto.html">Contacto</a>
+            
+            <!-- BOTÓN PARA INICIAR SESIÓN -->
+            <a href="#" id="abrir-sesion">Iniciar sesión</a>
+            <span class="contador-fav">Favoritos: <span id="total-fav">0</span></span>
+
+            <!-- BOTÓN MODO OSCURO / CLARO -->
+            <button type="button" class="boton-tema" id="boton-tema" aria-label="Cambiar entre modo oscuro y claro">☀️</button>
+            
+            <!-- MENÚ DE USUARIO -->
+            <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
+                <a href="perfil.html" id="enlace-perfil" style="color: #FFD700; text-decoration: none; font-weight: bold;">
+                    Hola, <span id="nombre-usuario">Usuario</span>
+                </a>
+                <a href="#" id="cerrar-sesion-usuario" style="color: white; text-decoration: none;">(Salir)</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- PORTADA PRINCIPAL -->
+<section class="portada">
+    <div class="imagen-portada">
+        <img src="gta6-banner.png" alt="Promoción de GTA VI">
+    </div>
+    <div class="capa-oscura"></div>
+    <div class="contenido-portada">
+        <p class="destacado">Juegos para todos</p>
+        <h2>Encuentra tu próximo juego favorito</h2>
+        <p>Busca, compara y descubre juegos que se adapten a tus gustos y presupuesto.</p>
+        <a href="#juegos" class="boton">Explorar juegos</a>
+    </div>
+</section>
+
+<!-- SECCION DE JUEGOS -->
+<section class="seccion-juegos" id="juegos">
+    <h2>Juegos destacados</h2>
+
+    <!-- BUSCADOR Y FILTROS -->
+    <div class="buscador-filtros">
+        <input type="text" id="buscador" placeholder="Buscar videojuego">
+
+        <select id="filtro-categorias">
+            <option value="">Todas las categorías</option>
+            <option value="carreras">Carreras</option>
+            <option value="aventura">Aventura</option>
+            <option value="disparos">Disparos</option>
+            <option value="deportes">Deportes</option>
+            <option value="accion">Acción</option>
+            <option value="terror">Terror</option>
+        </select>
+
+        <!-- FILTRO DE ORDEN POR PRECIO -->
+        <select id="ordenar-precio" onchange="ordenarJuegos(this.value)">
+            <option value="">Ordenar por precio</option>
+            <option value="menor">Menor a mayor</option>
+            <option value="mayor">Mayor a menor</option>
+        </select>
+
+        <select id="filtro-precio">
+            <option value="">Todos los precios</option>
+            <option value="0-50">S/ 0 - S/ 50</option>
+            <option value="51-100">S/ 51 - S/ 100</option>
+            <option value="101-200">S/ 101 - S/ 200</option>
+            <option value="201-300">S/ 201 - S/ 300</option>
+        </select>
+
+        <button type="button" class="boton-buscar">Buscar</button>
+    </div>
+
+    <!-- LISTA DE JUEGOS -->
+    <div class="lista-juegos">
+        <!-- PRIMER JUEGO -->
+        <div class="tarjeta-juego" data-id="neo-racing">
+            <div class="imagen-juego">
+                <img src="neo-racing.jpeg.jpeg" alt="Portada de Neo Racing">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=neo-racing">NEO RACING</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>CARRERAS</p>
+            <div class="compra">
+                <span>S/ 19.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- SEGUNDO JUEGO -->
+        <div class="tarjeta-juego" data-id="spider-man">
+            <div class="imagen-juego">
+                <img src="MARVEL.jpeg.JPG" alt="Portada de Marvel's Spider-Man">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=spider-man">MARVEL'S SPIDER-MAN</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 79.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- TERCER JUEGO -->
+        <div class="tarjeta-juego" data-id="fifa-26">
+            <div class="imagen-juego">
+                <img src="FIFA26.jpg" alt="Portada de FIFA 26">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=fifa-26">FIFA 26</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>DEPORTES</p>
+            <div class="compra">
+                <span>S/ 149.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- CUARTO JUEGO -->
+        <div class="tarjeta-juego" data-id="left-4-dead-2">
+            <div class="imagen-juego">
+                <img src="LEFT.jpeg" alt="Portada de Left 4 Dead 2">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <span class="etiqueta-oferta">OFERTA</span>
+            <h3><a href="juego.html?id=left-4-dead-2">LEFT 4 DEAD 2</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>DISPAROS Y AVENTURA</p>
+            <div class="compra">
+                <span>S/ 8.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- QUINTO JUEGO -->
+        <div class="tarjeta-juego" data-id="the-last-of-us">
+            <div class="imagen-juego">
+                <img src="the last of us.jpeg" alt="Portada de The Last of Us">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=the-last-of-us">THE LAST OF US™ PARTE I</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 99.50</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- SEXTO JUEGO -->
+        <div class="tarjeta-juego" data-id="dark-souls-3">
+            <div class="imagen-juego">
+                <img src="DarkSoulsIII.jpeg" alt="Portada de Dark Souls III">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=dark-souls-3">DARK SOULS III</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 172.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- SEPTIMO JUEGO -->
+        <div class="tarjeta-juego" data-id="red-dead-redemption-2">
+            <div class="imagen-juego">
+                <img src="red dead.jpeg" alt="Portada de Red Dead Redemption 2">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=red-dead-redemption-2">RED DEAD REDEMPTION 2</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 219.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- OCTAVO JUEGO -->
+        <div class="tarjeta-juego" data-id="black-myth-wukong">
+            <div class="imagen-juego">
+                <img src="black myth wukong.jpeg" alt="Portada de Black Myth Wukong">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=black-myth-wukong">BLACK MYTH: WUKONG</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 199.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- NOVENO JUEGO -->
+         <div class="tarjeta-juego" data-id="Resident Evil Requiem">
+            <div class="imagen-juego">
+                 <img src="resident evil.jpeg" alt="Portada de Resident Evil Requiem">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=Resident Evil Requiem">Resident Evil Requiem</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>SUPERVIVENCIA Y TERROR</p>
+            <div class="compra">
+                <span>S/ 120.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- TARJETA SILENT HILL -->
+        <div class="tarjeta-juego" data-id="silent-hill-f">
+            <div class="imagen-juego">
+                <img src="Silent hill f.jpeg" alt="Portada de Silent Hill f">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=silent-hill-f">SILENT HILL f</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>SUPERVIVENCIA Y TERROR</p>
+            <div class="compra">
+                <span>S/ 232.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
+
+        <!-- TARJETA NIER: AUTOMATA -->
+        <div class="tarjeta-juego" data-id="nier-automata">
+            <div class="imagen-juego">
+                <img src="nier_automata.jpeg" alt="Portada de Nier Automata">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=nier-automata">NIER: AUTOMATA</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 149.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
+
+        <!-- TARJETA The Binding of Isaac -->
+        <div class="tarjeta-juego" data-id="binding-of-isaac">
+            <div class="imagen-juego">
+                <img src="isaac.jpeg" alt="Portada de The Binding of Isaac">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=binding-of-isaac">The Binding of Isaac</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>Rogue like,Twin-stick Shooter,Dungeon Crawler</p>
+            <div class="compra">
+                <span>S/ 50.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div> 
+
+        <!-- TARJETA ELDEN RING -->
+        <div class="tarjeta-juego" data-id="elden-ring">
+            <div class="imagen-juego">
+                <img src="elden-ring.jpeg" alt="Portada de Elden Ring">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=elden-ring">ELDEN RING</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 199.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+        
+        <!-- TARJETA FIFA 27 -->
+          <div class="tarjeta-juego" data-id="FIFA 27">
+            <div class="imagen-juego">
+                <img src="fifa-27.jpeg" alt="Portada de FIFA 27">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+            <h3><a href="juego.html?id=FIFA 27">FIFA 27</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>DEPORTES</p>
+            <div class="compra">
+                <span>S/ 150.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+        
+        <!-- TARJETA DE GTA 6-->
+         <div class="tarjeta-juego"data-id="GTA 6">
+            <div class="imagen-juego">
+                <img src="gta-6.jpeg" alt="Portada de GTA 6">
+                <span style="position: relative; top: -14px; background-color: #50dabb; color: #171a21; padding: 7px; font-weight: bold;">CASHBACK </span>
+            </div>
+             <h3><a href="juego.html?id=GTA 6">GTA 6</a></h3>
+            <button type="button" class="btn-fav">♡</button>
+            <p>AVENTURA Y ACCIÓN</p>
+            <div class="compra">
+                <span>S/ 299.90</span>
+                <button type="button">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VENTANA DE INICIO DE SESION, REGISTRO Y RECUPERACION -->
+<div class="ventana-sesion" id="ventana-sesion">
+    <div class="caja-sesion">
+        <button type="button" class="cerrar-sesion" id="cerrar-sesion">✕</button>
+
+        <form class="formulario-sesion" id="form-login">
+            <h2>Iniciar sesión</h2>
+            <label for="login-correo">Correo electrónico</label>
+            <input type="email" id="login-correo" placeholder="tucorreo@ejemplo.com" required>
+            <label for="login-clave">Contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="login-clave" placeholder="Tu contraseña" required>
+                <button type="button" class="ver-clave" data-campo="login-clave">Mostrar</button>
+            </div>
+            <div class="opciones-login">
+                <label class="recordar"><input type="checkbox" id="recordar-sesion"> Recordarme</label>
+                <a href="#" id="ir-recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
+            <button type="submit" class="boton">Ingresar</button>
+            <div class="separador"><span>O continúa con</span></div>
+            <div class="botones-sociales">
+                <button type="button" class="social">Google</button>
+                <button type="button" class="social">Facebook</button>
+                <button type="button" class="social">Steam</button>
+            </div>
+            <p class="texto-registro">¿No tienes cuenta? <a href="#" id="ir-registro">Regístrate</a></p>
+        </form>
+
+        <form class="formulario-sesion" id="form-registro" style="display:none">
+            <h2>Crear cuenta</h2>
+            <label for="reg-nombre">Nombre</label>
+            <input type="text" id="reg-nombre" placeholder="Tu nombre" required>
+            <label for="reg-correo">Correo electrónico</label>
+            <input type="email" id="reg-correo" placeholder="tucorreo@ejemplo.com" required>
+            <label for="reg-clave">Contraseña (mínimo 6 caracteres)</label>
+            <div class="campo-clave">
+                <input type="password" id="reg-clave" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="reg-clave">Mostrar</button>
+            </div>
+            <label for="reg-confirmar">Confirmar contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="reg-confirmar" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="reg-confirmar">Mostrar</button>
+            </div>
+            <button type="submit" class="boton">Registrarme</button>
+            <p class="texto-registro">¿Ya tienes cuenta? <a href="#" id="ir-login">Inicia sesión</a></p>
+        </form>
+
+        <form class="formulario-sesion" id="form-recuperar" style="display:none">
+            <h2>Recuperar contraseña</h2>
+            <p class="texto-ayuda">Escribe el correo electrónico con el que registraste tu cuenta.</p>
+            <label for="rec-correo">Correo electrónico</label>
+            <input type="email" id="rec-correo" placeholder="tucorreo@ejemplo.com" required>
+            <label for="rec-clave">Nueva contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="rec-clave" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="rec-clave">Mostrar</button>
+            </div>
+            <label for="rec-confirmar">Confirmar nueva contraseña</label>
+            <div class="campo-clave">
+                <input type="password" id="rec-confirmar" minlength="6" required>
+                <button type="button" class="ver-clave" data-campo="rec-confirmar">Mostrar</button>
+            </div>
+            <button type="submit" class="boton">Cambiar contraseña</button>
+            <p class="texto-registro"><a href="#" id="volver-login">Volver al inicio de sesión</a></p>
+        </form>
+
+        <p id="mensaje-sesion" class="mensaje-sesion"></p>
+    </div>
+</div>
+
+<!-- BOTÓN IR ARRIBA (Movido aquí para que esté antes de los scripts) -->
+<button id="btn-ir-arriba" class="boton-arriba" onclick="irArriba()" title="Ir al inicio">
+↑
+</button>
+
+<!--0fertas-->
+<section id="ofertas" class="pagina-ofertas">
+
+    <div class="encabezado-ofertas">
+        <h2>OFERTAS ESPECIALES</h2>
+        <p>Encuentra tus videojuegos favoritos con descuentos.</p>
+    </div>
+
+    <div class="contenedor-tabla-ofertas">
+        <div class="tabla-scroll">
+            <table class="tabla-ofertas">
+
+                <thead>
+                    <tr>
+                        <th>Juego</th>
+                        <th>Plataforma</th>
+                        <th>Precio normal</th>
+                        <th>Precio con oferta</th>
+                        <th>Descuento</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="nombre-juego">FIFA 26</td>
+                        <td>PC / PS5</td>
+                        <td class="precio-normal">S/ 149.90</td>
+                        <td class="precio-oferta">S/ 119.90</td>
+                        <td><spam class="etiqueta-descuento">20%</spam></td>
+                    </tr>
+
+                    <tr>
+                        <td class="nombre-juego">LEFT 4 DEAD 2</td>
+                        <td>PC</td>
+                        <td class="precio-normal">S/ 18.90</td>
+                        <td class="precio-oferta">S/ 8.90</td>
+                        <td><spam class="etiqueta-descuento">53%</spam></td>
+                    </tr>
+
+                    <tr>
+                        <td class="nombre-juego">DARK SOULS III</td>
+                        <td>PC / PS4</td>
+                        <td class="precio-normal">S/ 172.90</td>
+                        <td class="precio-oferta">S/ 129.90</td>
+                        <td><span class="etiqueta-descuento">25%</span></td>
+                    </tr>
+                     <tr>
+                            <td class="nombre-juego">MARVEL'S SPIDER-MAN</td>
+                            <td>PC / PS5</td>
+                            <td class="precio-normal">S/ 79.90</td>
+                            <td class="precio-oferta">S/ 59.90</td>
+                            <td><span class="etiqueta-descuento">25%</span></td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            ¡Aprovecha las ofertas de Pixel Store!
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<!-- SCRIPTS -->
+<script src="busqueda.js"></script>
+<script src="sesion.js"></script>
+<script src="tienda.js"></script>
+<script src="pagos.js"></script>
+<script src="favoritos.js"></script>
+<script src="eventos.js"></script>
+<script src="menu.js"></script>
+<script src="ordenar.js"></script>
+
+<audio id="musica-fondo" loop preload="auto">
+    <source src="musica-fondo.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const musica = document.getElementById("musica-fondo");
+
+    musica.volume = 0.15;
+
+    function iniciarMusica() {
+        musica.play().then(() => {
+            document.removeEventListener("click", iniciarMusica);
+            document.removeEventListener("keydown", iniciarMusica);
+        }).catch(error => {
+            console.log("Esperando interacción para reproducir música.");
+        });
+    }
+
+    document.addEventListener("click", iniciarMusica);
+    document.addEventListener("keydown", iniciarMusica);
+</script>
+<!-- FOOTER DE PIXEL STORE -->
+<footer class="footer">
+    <h2>PIXEL STORE</h2>
+    <p>Tu tienda favorita de videojuegos.</p>
+    <div class="redes-sociales">
+        <a href="https://facebook.com/" target="_blank">Facebook</a>
+        <a href="https://instagram.com/" target="_blank">Instagram</a>
+        <a href="https://x.com/" target="_blank">X</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+    <p class="copyright">© 2026 Pixel Store - Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
