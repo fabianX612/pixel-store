@@ -1,9 +1,3 @@
-/* =====================================================================
-   PIXEL STORE - HOJA DE ESTILOS PRINCIPAL
-   Rediseño visual: estilo moderno, premium y gamer.
-   Nota: se conservan todas las clases e IDs que usa JavaScript.
-   ===================================================================== */
-
 /* ===== VARIABLES DE COLOR Y DISEÑO ===== */
 :root {
     --fondo: #0d0221;
@@ -99,9 +93,7 @@ select:focus-visible {
     50%      { text-shadow: 0 0 20px rgba(255, 230, 0, 0.8); }
 }
 
-/* =====================================================================
-   ENCABEZADO Y MENÚ
-   ===================================================================== */
+/* =====ENCABEZADO Y MENÚ ===== */
 .encabezado {
     position: sticky;
     top: 0;
@@ -223,9 +215,7 @@ select:focus-visible {
     color: var(--rojo) !important;
 }
 
-/* =====================================================================
-   PORTADA PRINCIPAL (BANNER)
-   ===================================================================== */
+/* ===== PORTADA PRINCIPAL (BANNER) ===== */
 .portada {
     position: relative;
     min-height: 540px;
@@ -323,10 +313,7 @@ select:focus-visible {
     margin: 0 auto 32px;
     max-width: 600px;
 }
-
-/* =====================================================================
-   BOTÓN GENERAL
-   ===================================================================== */
+   /* ====== BOTÓN GENERAL ===== */
 .boton {
     display: inline-block;
 
@@ -358,10 +345,7 @@ select:focus-visible {
 .boton:active {
     transform: translateY(0);
 }
-
-/* =====================================================================
-   SECCIÓN DE JUEGOS / CATÁLOGO
-   ===================================================================== */
+/* =====  SECCIÓN DE JUEGOS / CATÁLOGO   ===== */
 .seccion-juegos {
     padding: 70px 60px;
     scroll-margin-top: 70px; /* evita que el menú fijo tape el título */
@@ -712,58 +696,7 @@ select:focus-visible {
     transform: scale(1.05);
     box-shadow: var(--brillo-turquesa);
 }
-
-/* =====================================================================
-   CUENTAS DE STREAMING
-   ===================================================================== */
-.seccion-streaming {
-    padding: 70px 60px;
-}
-
-/* LISTA DE CUENTAS */
-.lista-streaming {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-
-    max-width: 1400px;
-    margin: auto;
-}
-
-/* TARJETA DE STREAMING */
-.tarjeta-streaming {
-    background: linear-gradient(180deg, var(--panel-2), var(--panel));
-    border: 1px solid rgba(255, 230, 0, 0.18);
-    border-radius: var(--radio);
-    overflow: hidden;
-    box-shadow: var(--sombra);
-
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.tarjeta-streaming:hover {
-    transform: translateY(-8px);
-    border-color: var(--turquesa);
-}
-
-/* LOGO */
-.tarjeta-streaming img {
-    width: 100%;
-    display: block;
-}
-
-/* TEXTO "1 PERFIL" */
-.tarjeta-streaming p {
-    color: var(--texto-suave);
-    font-size: 17px;
-    margin: 18px 18px 15px;
-}
-
-/* =====================================================================
-   INICIO DE SESIÓN, REGISTRO Y RECUPERACIÓN
-   ===================================================================== */
+  /* ======  INICIO DE SESIÓN, REGISTRO Y RECUPERACIÓN   ====== */
 .ventana-sesion {
     display: none;
     position: fixed;
@@ -1011,10 +944,7 @@ button.cerrar-sesion:hover {
     text-align: center;
     line-height: 1.5;
 }
-
-/* =====================================================================
-   PÁGINA DE DETALLE DEL JUEGO
-   ===================================================================== */
+  /* ===== PÁGINA DE DETALLE DEL JUEGO  ====== */
 body.sin-scroll { overflow: hidden; }
 
 .detalle {
@@ -1273,10 +1203,7 @@ body.sin-scroll { overflow: hidden; }
 }
 
 .tarjeta-mini span { color: var(--amarillo-texto); font-weight: bold; margin: 0 16px 16px; }
-
-/* =====================================================================
-   VENTANA DE PAGO (YAPE)
-   ===================================================================== */
+  /* ====== VENTANA DE PAGO (YAPE)  ====== */
 .pago-ventana {
     display: none;
     position: fixed;
@@ -1561,11 +1488,8 @@ body.sin-scroll { overflow: hidden; }
 .boton-volver:hover {
     background: var(--turquesa);
     transform: translateY(-2px);
-}
-
-/* =====================================================================
-   FOOTER
-   ===================================================================== */
+}  
+/* ====== FOOTER ========= */
 .footer {
     position: relative;
     background: linear-gradient(180deg, var(--panel) 0%, var(--fondo) 100%);
@@ -1706,10 +1630,7 @@ body.sin-scroll { overflow: hidden; }
     font-size: 11px;
     font-weight: 700;
 }
-
-/* =====================================================================
-   BOTÓN PARA CAMBIAR ENTRE MODO OSCURO Y CLARO
-   ===================================================================== */
+ /* =====  BOTÓN PARA CAMBIAR ENTRE MODO OSCURO Y CLARO    ======== */
 .boton-tema {
     width: 40px;
     height: 40px;
@@ -1745,11 +1666,7 @@ body.sin-scroll { overflow: hidden; }
 .encabezado-perfil .boton-tema:hover {
     transform: translateY(-50%) rotate(20deg) scale(1.08);
 }
-
-/* =====================================================================
-   MODO CLARO (se activa con la clase "modo-claro" en <html>)
-   Solo cambia las variables de color: el diseño es el mismo.
-   ===================================================================== */
+  /* ====== MODO CLARO (se activa con la clase "modo-claro" en <html>)  ======= */
 html.modo-claro {
     --fondo: #f4f0ff;
     --panel: #ffffff;
@@ -1814,10 +1731,7 @@ html.modo-claro .pago-ventana {
 }
 
 html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
-
-/* =====================================================================
-   CATÁLOGO CON BARRA LATERAL DE FILTROS (solo en la tienda, PC)
-   ===================================================================== */
+   /* ====== CATÁLOGO CON BARRA LATERAL DE FILTROS (solo en la tienda, PC) ======= */
 @media (min-width: 1001px) {
     #juegos {
         display: grid;
@@ -1882,11 +1796,7 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
-/* =====================================================================
-   DISEÑO RESPONSIVO (PC, TABLET Y CELULAR)
-   ===================================================================== */
-
+/* ======   DISEÑO RESPONSIVO (PC, TABLET Y CELULAR)  ======== */
 /* PANTALLAS MEDIANAS */
 @media (max-width: 1200px) {
     .lista-juegos,
@@ -2004,11 +1914,7 @@ html.modo-claro ::-webkit-scrollbar-track { background: #ece6fa; }
     .opciones-login { flex-wrap: wrap; }
     .botones-sociales { flex-direction: column; }
 }
-
-/* =========================================
-   ESTILOS PARA EL MENÚ HAMBURGUESA (MÓVIL)
-   ========================================= */
-
+  /* ===== ESTILOS PARA EL MENÚ HAMBURGUESA (MÓVIL)  ====== */
 /* Ocultar el botón hamburguesa en pantallas grandes (PC) */
 .menu-toggle {
     display: none;
@@ -2215,10 +2121,7 @@ html.modo-claro .tabla-ofertas tbody tr:nth-child(even) {
 html.modo-claro .tabla-ofertas .nombre-juego {
     color: #24143d;
 }
-
-/* =====================================================================
-   PÁGINA DE CONTACTO
-   ===================================================================== */
+ /* =====  PÁGINA DE CONTACTO ====== */
 .contacto-contenedor {
     width: min(100% - 40px, 1000px);
     margin: 0 auto;
