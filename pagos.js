@@ -195,7 +195,7 @@ const CONFIG_PAGO = {
         e.stopPropagation();
 
         // --- CÓDIGO DE DESCUENTO ---
-        let codigo = prompt("🎮 ¡Hola Gamer!\nIngresa un código de descuento (Prueba con: GAMER10):");
+        let codigo = prompt("🎮 ¡Hola Gamer!\nIngresa un código de descuento:");
         
         if (codigo !== null) { 
             if (codigo.toUpperCase() === "GAMER10") {
